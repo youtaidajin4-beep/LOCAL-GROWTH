@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" aria-hidden="true">
+  <rect width="400" height="280" rx="8" fill="#FFF7F2" stroke="#F0E4DC" stroke-width="1"/>
+  <!-- HP box -->
+  <rect x="32" y="100" width="100" height="72" rx="6" fill="#fff" stroke="#E85D24" stroke-width="1.5"/>
+  <text x="44" y="132" font-family="sans-serif" font-size="11" font-weight="600" fill="#E85D24">HP??</text>
+  <rect x="44" y="142" width="56" height="4" rx="1" fill="#E85D24" fill-opacity="0.12"/>
+  <rect x="44" y="152" width="76" height="4" rx="1" fill="#E85D24" fill-opacity="0.08"/>
+  <!-- AI box -->
+  <rect x="268" y="100" width="100" height="72" rx="6" fill="#fff" stroke="#E85D24" stroke-width="1.5"/>
+  <text x="288" y="132" font-family="sans-serif" font-size="11" font-weight="600" fill="#E85D24">AI??</text>
+  <circle cx="318" cy="152" r="10" stroke="#E85D24" stroke-width="1.2" fill="#E85D24" fill-opacity="0.06"/>
+  <circle cx="318" cy="152" r="4" fill="#E85D24" fill-opacity="0.2"/>
+  <!-- Center growth -->
+  <circle cx="200" cy="136" r="44" fill="#E85D24" fill-opacity="0.06" stroke="#E85D24" stroke-width="1.5"/>
+  <text x="184" y="132" font-family="sans-serif" font-size="13" font-weight="600" fill="#E85D24">??</text>
+  <path d="M188 148 L200 128 L212 148" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrows -->
+  <path d="M132 136 H152" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M148 132 L156 136 L148 140" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M248 136 H268" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M264 132 L272 136 L264 140" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom labels -->
+  <rect x="60" y="210" width="280" height="40" rx="4" fill="#fff" stroke="#F0E4DC" stroke-width="1"/>
+  <text x="108" y="236" font-family="sans-serif" font-size="11" fill="#5C5C5C">???????????????</text>
+</svg>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社LOCAL GROWTHは、ホームページ制作とAI支援導入を通じて、企業の成長を静かに、強く後押しします。地方の成長を、WebとAIで支えるパートナーです。">
+  <title>株式会社LOCAL GROWTH | 地方の成長を、WebとAIで支える</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-enter">
+
+  <a href="#main" class="skip-link">メインコンテンツへ</a>
+
+  <div class="mesh-bg" aria-hidden="true"></div>
+  <canvas class="particle-canvas" aria-hidden="true"></canvas>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="LOCAL GROWTH トップへ">LOCAL GROWTH</a>
+      <button class="header__toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+      <nav class="header__nav" id="nav-menu" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="index.html#service" class="header__nav-link">SERVICE</a></li>
+          <li><a href="about.html" class="header__nav-link">ABOUT</a></li>
+          <li><a href="contact.html" class="header__nav-link">CONTACT</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--sm header__cta">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero hero--top" aria-labelledby="hero-heading">
+      <div class="hero__grid-overlay" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__label fade-in stagger-1">株式会社LOCAL GROWTH</p>
+          <h1 class="hero__title fade-in stagger-2" id="hero-heading">地方の成長を、<br><span class="text-accent">Web</span>と<span class="text-accent">AI</span>で支える。</h1>
+          <p class="hero__lead fade-in stagger-3">
+            ホームページ制作とAI支援導入を通じて、企業の成長を静かに、強く後押しします。
+          </p>
+          <div class="hero__actions fade-in stagger-4">
+            <a href="#service" class="btn btn--primary">サービスを見る</a>
+            <a href="contact.html" class="btn btn--outline">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="hero__visual fade-in stagger-3 illust-float" aria-hidden="true">
+          <div class="hero__image-wrap">
+            <img src="assets/images/hero-main.png" alt="" class="hero__main-img" width="640" height="480" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service ボタンカード -->
+    <section class="section" id="service" aria-labelledby="service-heading">
+      <div class="container">
+        <div class="section__header fade-in">
+          <p class="section__label">SERVICE</p>
+          <h2 class="section__title" id="service-heading">2つの軸で、成長を支える。</h2>
+        </div>
+        <div class="service-btn-grid">
+          <a href="service-hp.html" class="service-btn-card fade-in" data-glow>
+            <div class="service-btn-card__img">
+              <img src="assets/images/service-web.png" alt="" width="600" height="400" loading="lazy">
+            </div>
+            <div class="service-btn-card__body">
+              <p class="service-btn-card__label">SERVICE 01</p>
+              <h3 class="service-btn-card__title">HP作成</h3>
+              <p class="service-btn-card__catch">信頼が伝わる、最初の顔をつくる。</p>
+              <span class="service-btn-card__arrow" aria-hidden="true">詳しく見る →</span>
+            </div>
+          </a>
+          <a href="service-ai.html" class="service-btn-card fade-in" data-glow>
+            <div class="service-btn-card__img">
+              <img src="assets/images/service-ai.png" alt="" width="600" height="400" loading="lazy">
+            </div>
+            <div class="service-btn-card__body">
+              <p class="service-btn-card__label">SERVICE 02</p>
+              <h3 class="service-btn-card__title">AI支援導入事業</h3>
+              <p class="service-btn-card__catch">導入で終わらない、使える仕組みへ。</p>
+              <span class="service-btn-card__arrow" aria-hidden="true">詳しく見る →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser -->
+    <section class="section section--alt section--decor teaser" aria-labelledby="teaser-heading">
+      <div class="container teaser__inner fade-in">
+        <p class="section__label">CONCEPT</p>
+        <h2 class="teaser__title" id="teaser-heading">人を増やす前に、仕組みを整える。</h2>
+        <p class="teaser__text">見た目の美しさと、現場で使える実用性。その両立が、LOCAL GROWTHの考え方です。</p>
+        <a href="about.html" class="btn btn--outline teaser__link">会社について詳しく見る →</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-band" aria-labelledby="cta-heading">
+      <div class="container cta-band__inner fade-in">
+        <h2 class="cta-band__title" id="cta-heading">まずは、お気軽にご相談ください。</h2>
+        <p class="cta-band__text">現状や課題をお聞かせください。整理の段階から、丁寧にご一緒します。</p>
+        <a href="contact.html" class="btn btn--primary btn--lg">無料でお問い合わせする</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">LOCAL GROWTH</a>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <ul class="footer__nav-list">
+          <li><a href="index.html#service">SERVICE</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      <p class="footer__copy">&copy; 2026 株式会社LOCAL GROWTH</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

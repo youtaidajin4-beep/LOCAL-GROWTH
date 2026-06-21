@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社LOCAL GROWTHの無料相談予約。ホームページ制作・AI導入のご相談は、ご希望日時を選んでお申し込みください。">
+  <title>無料相談のご予約 | 株式会社LOCAL GROWTH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-enter page--sub">
+
+  <a href="#main" class="skip-link">メインコンテンツへ</a>
+  <div class="mesh-bg" aria-hidden="true"></div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">LOCAL GROWTH</a>
+      <button class="header__toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+      <nav class="header__nav" id="nav-menu" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="index.html#service" class="header__nav-link">SERVICE</a></li>
+          <li><a href="about.html" class="header__nav-link">ABOUT</a></li>
+          <li><a href="contact.html" class="header__nav-link" aria-current="page">CONTACT</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--sm header__cta">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section section--contact section--decor" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact__layout">
+          <div class="contact__side fade-in">
+            <p class="section__label">RESERVATION</p>
+            <h1 class="contact__title" id="contact-heading">無料相談のご予約</h1>
+            <p class="contact__lead" id="contact-context">
+              3ステップで、ご希望の日時をお選びいただけます。オンライン・対面どちらも対応。現状や課題の整理から、丁寧にご一緒します。
+            </p>
+            <ul class="trust-badges" aria-label="無料相談の特徴">
+              <li class="trust-badges__item">完全無料</li>
+              <li class="trust-badges__item">オンライン対応</li>
+              <li class="trust-badges__item">所要約60分</li>
+            </ul>
+            <div class="contact__illust illust-float fade-in">
+              <img src="assets/illustrations/contact-illust.svg" alt="" class="illust" width="320" height="280" loading="lazy">
+            </div>
+          </div>
+
+          <!-- FORM: 送信先を設定 — 現在はダミー実装です -->
+          <form class="contact__form booking-form fade-in" id="contact-form" novalidate>
+            <ol class="booking-steps" aria-label="予約フォームの進捗">
+              <li class="booking-steps__item is-active" data-step-indicator="1">
+                <span class="booking-steps__num">1</span>
+                <span class="booking-steps__label">相談内容</span>
+              </li>
+              <li class="booking-steps__item" data-step-indicator="2">
+                <span class="booking-steps__num">2</span>
+                <span class="booking-steps__label">希望日時</span>
+              </li>
+              <li class="booking-steps__item" data-step-indicator="3">
+                <span class="booking-steps__num">3</span>
+                <span class="booking-steps__label">連絡先</span>
+              </li>
+            </ol>
+
+            <!-- Step 1 -->
+            <div class="booking-panel is-active" data-step="1">
+              <h2 class="booking-panel__title">ご相談内容</h2>
+              <p class="booking-panel__desc">ご相談の種別をお選びください。</p>
+
+              <fieldset class="form__group form__group--fieldset">
+                <legend class="form__label">ご相談種別 <span class="form__required" aria-label="必須">*</span></legend>
+                <div class="category-cards" role="radiogroup" aria-label="ご相談種別">
+                  <label class="category-card">
+                    <input type="radio" name="category" value="hp" class="category-card__input" required>
+                    <span class="category-card__body">
+                      <span class="category-card__title">HP制作</span>
+                      <span class="category-card__desc">ホームページの新規制作・リニューアル</span>
+                    </span>
+                  </label>
+                  <label class="category-card">
+                    <input type="radio" name="category" value="ai" class="category-card__input">
+                    <span class="category-card__body">
+                      <span class="category-card__title">AI支援導入</span>
+                      <span class="category-card__desc">業務効率化・AI活用のご相談</span>
+                    </span>
+                  </label>
+                  <label class="category-card">
+                    <input type="radio" name="category" value="other" class="category-card__input">
+                    <span class="category-card__body">
+                      <span class="category-card__title">その他</span>
+                      <span class="category-card__desc">上記以外のご相談</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form__group">
+                <label for="message" class="form__label">相談メモ（任意）</label>
+                <textarea id="message" name="message" class="form__input form__textarea" rows="4" placeholder="現状の課題やご希望があればお聞かせください"></textarea>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="booking-panel" data-step="2" hidden>
+              <h2 class="booking-panel__title">ご希望日時</h2>
+              <p class="booking-panel__desc">ご都合のよい日時をお選びください。</p>
+
+              <div class="form__group">
+                <label for="preferred-date" class="form__label">希望日 <span class="form__required" aria-label="必須">*</span></label>
+                <input type="date" id="preferred-date" name="preferred_date" class="form__input" required>
+              </div>
+
+              <fieldset class="form__group form__group--fieldset">
+                <legend class="form__label">希望時間帯 <span class="form__required" aria-label="必須">*</span></legend>
+                <div class="time-slots">
+                  <label class="time-slot">
+                    <input type="radio" name="preferred_time" value="10:00-12:00" class="time-slot__input" required>
+                    <span class="time-slot__label">10:00–12:00</span>
+                  </label>
+                  <label class="time-slot">
+                    <input type="radio" name="preferred_time" value="13:00-15:00" class="time-slot__input">
+                    <span class="time-slot__label">13:00–15:00</span>
+                  </label>
+                  <label class="time-slot">
+                    <input type="radio" name="preferred_time" value="15:00-17:00" class="time-slot__input">
+                    <span class="time-slot__label">15:00–17:00</span>
+                  </label>
+                  <label class="time-slot">
+                    <input type="radio" name="preferred_time" value="flexible" class="time-slot__input">
+                    <span class="time-slot__label">日程は相談して決める</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form__group form__group--fieldset">
+                <legend class="form__label">相談方法 <span class="form__required" aria-label="必須">*</span></legend>
+                <div class="time-slots time-slots--method">
+                  <label class="time-slot">
+                    <input type="radio" name="consultation_method" value="online" class="time-slot__input" required>
+                    <span class="time-slot__label">オンライン（Zoom等）</span>
+                  </label>
+                  <label class="time-slot">
+                    <input type="radio" name="consultation_method" value="in-person" class="time-slot__input">
+                    <span class="time-slot__label">対面（長崎）</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="booking-panel" data-step="3" hidden>
+              <h2 class="booking-panel__title">ご連絡先</h2>
+              <p class="booking-panel__desc">ご予約確認のご連絡先をご入力ください。</p>
+
+              <div class="form__group">
+                <label for="name" class="form__label">お名前 <span class="form__required" aria-label="必須">*</span></label>
+                <input type="text" id="name" name="name" class="form__input" required autocomplete="name" placeholder="山田 太郎">
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">メールアドレス <span class="form__required" aria-label="必須">*</span></label>
+                <input type="email" id="email" name="email" class="form__input" required autocomplete="email" placeholder="example@company.com">
+              </div>
+              <div class="form__group">
+                <label for="phone" class="form__label">電話番号（任意）</label>
+                <input type="tel" id="phone" name="phone" class="form__input" autocomplete="tel" placeholder="090-1234-5678">
+              </div>
+              <div class="form__group">
+                <label for="company" class="form__label">会社名（任意）</label>
+                <input type="text" id="company" name="company" class="form__input" autocomplete="organization" placeholder="株式会社〇〇">
+              </div>
+            </div>
+
+            <div class="booking-nav">
+              <button type="button" class="btn btn--outline booking-nav__prev" id="booking-prev" hidden>戻る</button>
+              <button type="button" class="btn btn--primary booking-nav__next" id="booking-next">次へ</button>
+              <button type="submit" class="btn btn--primary btn--full booking-nav__submit" id="booking-submit" hidden>無料でお問い合わせする</button>
+            </div>
+
+            <p class="form__success" id="form-success" role="status" hidden>
+              ご予約を受け付けました。確認のうえ、担当者よりご連絡いたします。
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">LOCAL GROWTH</a>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <ul class="footer__nav-list">
+          <li><a href="index.html#service">SERVICE</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      <p class="footer__copy">&copy; 2026 株式会社LOCAL GROWTH</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
