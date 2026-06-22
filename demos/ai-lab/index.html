@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
   <title>AI Lab | LOCAL GROWTH デモ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="/service-ai" class="demo-back">← AI支援ページに戻る</a>
   <div class="mesh-bg" aria-hidden="true"></div>
   <div class="container">
     <header class="header">
@@ -20,10 +21,12 @@
     </header>
 
     <nav class="tabs" aria-label="ユースケース選択">
-      <button type="button" class="tab is-active" data-tab="minutes">議事録要約</button>
-      <button type="button" class="tab" data-tab="email">営業メール</button>
-      <button type="button" class="tab" data-tab="knowledge">ナレッジ検索</button>
-      <button type="button" class="tab" data-tab="report">日報自動化</button>
+      <div class="tabs__scroll">
+        <button type="button" class="tab is-active" data-tab="minutes">議事録要約</button>
+        <button type="button" class="tab" data-tab="email">営業メール</button>
+        <button type="button" class="tab" data-tab="knowledge">ナレッジ検索</button>
+        <button type="button" class="tab" data-tab="report">日報自動化</button>
+      </div>
     </nav>
 
     <!-- Panel 1: Minutes -->

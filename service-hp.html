@@ -84,7 +84,7 @@
         </div>
 
         <div class="works__preview fade-in">
-          <div class="demo-browser">
+          <div class="demo-browser demo-browser--desktop">
             <div class="demo-browser__chrome">
               <div class="demo-browser__dots" aria-hidden="true">
                 <span></span><span></span><span></span>
@@ -93,16 +93,30 @@
             </div>
             <iframe
               class="demo-browser__iframe"
-              src="demos/nexus-growth/index.html"
+              src="/demos/nexus-growth"
               title="NEXUS GROWTH 制作デモのプレビュー"
               loading="lazy"
               allow="fullscreen"
             ></iframe>
           </div>
+
+          <div class="demo-launch demo-launch--mobile" aria-label="スマホ向けデモ体験">
+            <div class="demo-launch__screen demo-launch__screen--hp" aria-hidden="true">
+              <span class="demo-launch__pill">B2B Demo LP</span>
+              <span class="demo-launch__headline">成長のボトルネックを、データで突破。</span>
+              <span class="demo-launch__metrics">
+                <span>LCP 0.9s</span>
+                <span>CTR +240%</span>
+                <span>SEO 95+</span>
+              </span>
+            </div>
+            <p class="demo-launch__text">スマホではフル画面でスクロール・導線・CTAまで体験できます。制作クオリティをそのまま確認してください。</p>
+            <a href="/demos/nexus-growth" class="btn btn--primary btn--lg btn--full demo-launch__btn">デモを体験する</a>
+          </div>
         </div>
 
-        <p class="fade-in" style="text-align: center;">
-          <a href="/demos/nexus-growth" class="works__fullscreen" target="_blank" rel="noopener noreferrer">
+        <p class="fade-in works__fullscreen-wrap">
+          <a href="/demos/nexus-growth" class="works__fullscreen works__fullscreen--desktop" target="_blank" rel="noopener noreferrer">
             フルスクリーンでデモを見る →
           </a>
         </p>

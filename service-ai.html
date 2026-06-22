@@ -147,7 +147,7 @@
         </div>
 
         <div class="works__preview fade-in">
-          <div class="demo-browser">
+          <div class="demo-browser demo-browser--desktop">
             <div class="demo-browser__chrome">
               <div class="demo-browser__dots" aria-hidden="true">
                 <span></span><span></span><span></span>
@@ -156,16 +156,31 @@
             </div>
             <iframe
               class="demo-browser__iframe"
-              src="demos/ai-lab/index.html"
+              src="/demos/ai-lab"
               title="AI Lab ユースケースデモのプレビュー"
               loading="lazy"
               allow="fullscreen"
             ></iframe>
           </div>
+
+          <div class="demo-launch demo-launch--mobile" aria-label="スマホ向けデモ体験">
+            <div class="demo-launch__screen demo-launch__screen--ai" aria-hidden="true">
+              <span class="demo-launch__pill">AI Lab Demo</span>
+              <span class="demo-launch__headline">4つの業務シーンをタップで体験</span>
+              <span class="demo-launch__chips">
+                <span>議事録</span>
+                <span>営業メール</span>
+                <span>ナレッジ</span>
+                <span>日報</span>
+              </span>
+            </div>
+            <p class="demo-launch__text">スマホでもタブ切り替えと「AIで実行」ボタンが使えます。業務がどう変わるか、フル画面でお試しください。</p>
+            <a href="/demos/ai-lab" class="btn btn--primary btn--lg btn--full demo-launch__btn">デモを体験する</a>
+          </div>
         </div>
 
-        <p class="fade-in" style="text-align: center;">
-          <a href="/demos/ai-lab" class="works__fullscreen" target="_blank" rel="noopener noreferrer">
+        <p class="fade-in works__fullscreen-wrap">
+          <a href="/demos/ai-lab" class="works__fullscreen works__fullscreen--desktop" target="_blank" rel="noopener noreferrer">
             フルスクリーンでデモを見る →
           </a>
         </p>

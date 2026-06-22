@@ -3,6 +3,44 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  if (window.self !== window.top) {
+    document.documentElement.classList.add('is-embedded');
+  }
+
+  /* Mobile nav */
+  const navToggle = document.querySelector('.nav-toggle');
+  const navDrawer = document.getElementById('mobile-nav');
+
+  function closeNav() {
+    if (!navToggle || !navDrawer) return;
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'メニューを開く');
+    navDrawer.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  if (navToggle && navDrawer) {
+    navToggle.addEventListener('click', function () {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeNav();
+      } else {
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggle.setAttribute('aria-label', 'メニューを閉じる');
+        navDrawer.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    navDrawer.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+  }
+
   /* Fade-in on scroll */
   const fadeEls = document.querySelectorAll('.fade-in');
   if (fadeEls.length && !prefersReducedMotion) {

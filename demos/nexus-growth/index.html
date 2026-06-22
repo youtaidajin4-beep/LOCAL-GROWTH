@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="NEXUS GROWTHは、データドリブンな成長戦略でB2B企業の売上拡大を支援。マーケティング自動化・導線設計・SEO最適化まで一気通貫でサポートします。">
   <meta name="robots" content="noindex, nofollow">
   <title>NEXUS GROWTH | B2B成長支援プラットフォーム</title>
@@ -33,21 +33,32 @@
 </head>
 <body>
 
+  <a href="/service-hp" class="demo-back">← HP制作ページに戻る</a>
   <div class="mesh-bg" aria-hidden="true"></div>
 
   <header class="header">
     <div class="container header__inner">
       <a href="#" class="logo">NEXUS <span>GROWTH</span></a>
-      <nav aria-label="メインナビゲーション">
-        <ul class="nav">
+      <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <ul class="nav__list">
           <li><a href="#problems">課題</a></li>
           <li><a href="#solution">ソリューション</a></li>
           <li><a href="#proof">実績</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="btn btn--primary">無料相談</a>
+      <a href="#contact" class="btn btn--primary header__cta">無料相談</a>
     </div>
+    <nav class="nav-drawer" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+      <a href="#problems">課題</a>
+      <a href="#solution">ソリューション</a>
+      <a href="#proof">実績</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn--primary btn--full">無料相談する</a>
+    </nav>
   </header>
 
   <main>

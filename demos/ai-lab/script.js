@@ -3,6 +3,10 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  if (window.self !== window.top) {
+    document.documentElement.classList.add('is-embedded');
+  }
+
   const panels = document.querySelectorAll('.panel');
   const tabs = document.querySelectorAll('.tab');
   const outputs = {

@@ -85,21 +85,112 @@ body {
 
 .logo span { color: var(--accent-light); }
 
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--text);
+  margin: 0 auto;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
 .nav { display: none; }
 
+.nav-drawer {
+  position: fixed;
+  top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+  background: rgba(10, 14, 23, 0.98);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-drawer[hidden] {
+  display: none !important;
+}
+
+.nav-drawer a {
+  display: block;
+  padding: 14px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.nav-drawer a:hover {
+  background: var(--surface);
+}
+
+.nav-drawer .btn {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.header__cta {
+  display: none;
+}
+
 @media (min-width: 768px) {
+  .nav-toggle,
+  .nav-drawer {
+    display: none !important;
+  }
+
+  .header__cta {
+    display: inline-flex;
+  }
+
   .nav {
+    display: block;
+  }
+
+  .nav__list {
     display: flex;
     gap: 28px;
     list-style: none;
   }
-  .nav a {
+
+  .nav__list a {
     font-size: 13px;
     color: var(--text-sub);
     text-decoration: none;
     transition: color var(--transition);
   }
-  .nav a:hover { color: var(--text); }
+
+  .nav__list a:hover { color: var(--text); }
 }
 
 .btn {
@@ -137,6 +228,8 @@ body {
 .btn--ghost:hover { background: var(--surface); }
 
 .btn--lg { padding: 14px 28px; font-size: 15px; }
+
+.btn--full { width: 100%; }
 
 /* Hero */
 .hero {
@@ -649,4 +742,138 @@ body {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  :root {
+    --header-h: 56px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 28px) 0 56px;
+  }
+
+  .hero__title {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .solution__visual {
+    aspect-ratio: auto;
+    min-height: 220px;
+    padding: 16px;
+  }
+
+  .solution__flow {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .solution__flow span {
+    padding: 10px 12px;
+  }
+
+  .cta-band__inner {
+    padding: 32px 20px;
+  }
+
+  .sticky-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sticky-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .insight-panels {
+    left: 12px;
+    right: 12px;
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .insight-toggle {
+    flex: 1;
+    min-width: calc(50% - 4px);
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .insight-panel {
+    width: 100%;
+    max-height: 40vh;
+    order: 3;
+  }
+
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+html.is-embedded .insight-panels,
+html.is-embedded .sticky-cta {
+  display: none;
+}
+
+html.is-embedded body {
+  padding-bottom: 0;
+}
+
+.demo-back {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  padding: 10px 16px;
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-sub);
+  text-decoration: none;
+  background: rgba(10, 14, 23, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 767px) {
+  .demo-back {
+    display: block;
+  }
+}
+
+html.is-embedded .demo-back {
+  display: none;
 }
