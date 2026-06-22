@@ -56,6 +56,12 @@
     });
   }
 
+  function normalizePageKey(pathname) {
+    const segment = pathname.split('/').filter(Boolean).pop() || '';
+    if (!segment || segment === 'index.html') return '';
+    return segment.replace(/\.html$/, '');
+  }
+
   /* --- スムーススクロール（同一ページ内アンカー） --- */
   document.querySelectorAll('a[href*="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -65,11 +71,14 @@
       const hashIndex = href.indexOf('#');
       if (hashIndex === -1) return;
 
-      const path = href.slice(0, hashIndex) || window.location.pathname.split('/').pop() || 'index.html';
+      const rawPath = href.slice(0, hashIndex);
+      const pathKey = rawPath === '/' || rawPath === './' || rawPath === ''
+        ? ''
+        : normalizePageKey(rawPath.startsWith('/') ? rawPath : '/' + rawPath);
       const targetId = href.slice(hashIndex);
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const currentKey = normalizePageKey(window.location.pathname);
 
-      if (path !== '' && path !== currentPage && path !== './' + currentPage) return;
+      if (pathKey !== '' && pathKey !== currentKey) return;
 
       const target = document.querySelector(targetId);
       if (!target) return;
