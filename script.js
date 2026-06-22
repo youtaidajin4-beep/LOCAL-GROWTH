@@ -7,6 +7,7 @@
   'use strict';
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
   /* --- 固定ヘッダー --- */
   const header = document.querySelector('.header');
@@ -129,7 +130,7 @@
   /* --- Hero パララックス --- */
   const heroImageWrap = document.querySelector('.hero__image-wrap');
 
-  if (heroImageWrap && !prefersReducedMotion) {
+  if (heroImageWrap && !prefersReducedMotion && !isMobile) {
     window.addEventListener('scroll', function () {
       const offset = Math.min(window.scrollY * 0.04, 24);
       heroImageWrap.style.transform = 'translateY(' + offset + 'px)';
@@ -152,7 +153,7 @@
   /* --- パーティクル（軽量） --- */
   const canvas = document.querySelector('.particle-canvas');
 
-  if (canvas && !prefersReducedMotion) {
+  if (canvas && !prefersReducedMotion && !isMobile) {
     const ctx = canvas.getContext('2d');
     let particles = [];
     let w, h;
@@ -220,6 +221,7 @@
   /* --- 予約フォーム: 3ステップウィザード --- */
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
   const panels = form ? form.querySelectorAll('.booking-panel') : [];
   const stepIndicators = form ? form.querySelectorAll('[data-step-indicator]') : [];
   const prevBtn = document.getElementById('booking-prev');
@@ -318,34 +320,101 @@
     updateStepUI();
   }
 
-  /* --- ダミーフォーム送信 --- */
+  const categoryLabels = {
+    hp: 'HP制作',
+    ai: 'AI支援導入',
+    other: 'その他'
+  };
+
+  const methodLabels = {
+    online: 'オンライン（Zoom等）',
+    'in-person': '対面（長崎）'
+  };
+
+  function enableAllFormFields() {
+    panels.forEach(function (panel) {
+      setPanelFieldsEnabled(panel, true);
+    });
+  }
+
+  function buildFormPayload() {
+    const data = new FormData(form);
+    const category = data.get('category');
+    const method = data.get('consultation_method');
+
+    data.set('ご相談種別', categoryLabels[category] || category || '');
+    data.set('相談方法', methodLabels[method] || method || '');
+    data.set('_subject', '【LOCAL GROWTH】無料相談のお申し込み');
+    data.set('_template', 'table');
+    data.set('_captcha', 'false');
+
+    return data;
+  }
+
+  /* --- フォーム送信（FormSubmit） --- */
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      if (errorMsg) errorMsg.hidden = true;
 
       if (!validateCurrentStep()) {
         return;
       }
 
+      enableAllFormFields();
+
       if (!form.checkValidity()) {
         form.reportValidity();
+        updateStepUI();
         return;
       }
 
-      /* FORM: 送信先を設定 — ここに実際の送信処理を追加 */
-      form.classList.add('is-submitted');
+      const endpoint = form.getAttribute('data-form-endpoint');
+      if (!endpoint) {
+        if (errorMsg) {
+          errorMsg.textContent = '送信先が設定されていません。';
+          errorMsg.hidden = false;
+        }
+        updateStepUI();
+        return;
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = '送信中...';
       }
 
-      setTimeout(function () {
-        if (successMsg) successMsg.hidden = false;
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = submitLabel;
+      fetch(endpoint, {
+        method: 'POST',
+        body: buildFormPayload(),
+        headers: {
+          Accept: 'application/json'
         }
-      }, 800);
+      })
+        .then(function (response) {
+          return response.json().then(function (body) {
+            if (!response.ok) {
+              throw new Error(body.message || '送信に失敗しました');
+            }
+            return body;
+          });
+        })
+        .then(function () {
+          form.classList.add('is-submitted');
+          if (successMsg) successMsg.hidden = false;
+        })
+        .catch(function () {
+          if (errorMsg) {
+            errorMsg.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+            errorMsg.hidden = false;
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitLabel;
+          }
+          updateStepUI();
+        });
     });
   }
 

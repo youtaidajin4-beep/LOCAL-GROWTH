@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="株式会社LOCAL GROWTHの会社情報。コンセプト、チーム、導入の流れをご紹介します。">
   <title>会社について | 株式会社LOCAL GROWTH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-enter page--sub">
+<body class="page-enter page--sub page--about">
 
   <a href="#main" class="skip-link">メインコンテンツへ</a>
   <div class="mesh-bg" aria-hidden="true"></div>
@@ -36,155 +36,318 @@
 
   <main id="main">
 
-    <section class="page-hero page-hero--compact" aria-labelledby="about-heading">
-      <div class="container">
-        <p class="section__label fade-in">ABOUT</p>
-        <h1 class="page-hero__title fade-in" id="about-heading">LOCAL GROWTHについて</h1>
-        <p class="page-hero__lead fade-in">人を増やす前に、仕組みを整える。それが私たちの考え方です。</p>
+    <!-- Hero -->
+    <section class="about-hero" aria-labelledby="about-heading">
+      <div class="about-hero__glow" aria-hidden="true"></div>
+      <div class="container about-hero__inner">
+        <div class="about-hero__content fade-in">
+          <p class="section__label">ABOUT</p>
+          <h1 class="about-hero__title" id="about-heading">
+            地方の成長を、<br><span class="text-accent">仕組み</span>で支える。
+          </h1>
+          <p class="about-hero__lead">
+            人を増やす前に、仕組みを整える。LOCAL GROWTHは、HP制作とAI支援の2軸から、企業の成長を静かに、強く後押しします。
+          </p>
+          <ul class="about-hero__stats" aria-label="LOCAL GROWTHの特徴">
+            <li class="about-hero__stat">
+              <span class="about-hero__stat-value">2</span>
+              <span class="about-hero__stat-label">つの事業軸</span>
+            </li>
+            <li class="about-hero__stat">
+              <span class="about-hero__stat-value">3</span>
+              <span class="about-hero__stat-label">名の役員体制</span>
+            </li>
+            <li class="about-hero__stat">
+              <span class="about-hero__stat-value">1</span>
+              <span class="about-hero__stat-label">つの伴走スタイル</span>
+            </li>
+          </ul>
+        </div>
+        <div class="about-hero__visual fade-in" aria-hidden="true">
+          <div class="about-orbit">
+            <div class="about-orbit__ring about-orbit__ring--outer"></div>
+            <div class="about-orbit__ring about-orbit__ring--inner"></div>
+            <div class="about-orbit__core">
+              <span class="about-orbit__label">GROWTH</span>
+            </div>
+            <div class="about-orbit__node about-orbit__node--1">
+              <span>HP</span>
+            </div>
+            <div class="about-orbit__node about-orbit__node--2">
+              <span>AI</span>
+            </div>
+            <div class="about-orbit__node about-orbit__node--3">
+              <span>伴走</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Concept -->
     <section class="section section--alt section--decor" id="concept" aria-labelledby="concept-heading">
       <div class="container">
         <div class="section__header fade-in">
           <p class="section__label">CONCEPT</p>
           <h2 class="section__title" id="concept-heading">人を増やす前に、<br class="sp-only">仕組みを整える。</h2>
         </div>
-        <div class="concept__body fade-in">
-          <p>LOCAL GROWTHは、ホームページ制作とAI支援導入の2軸から、企業の成長を支える会社です。</p>
-          <p>ただ作るだけではなく、ただ導入するだけでもなく、事業にとって本当に意味のある仕組みとして機能することを大切にしています。</p>
-          <p>見た目の美しさと、現場で使える実用性の両立。静かだけれど、確かな成長につながる支援。それがLOCAL GROWTHの考え方です。</p>
-          <p>見た目だけでは終わらないHP制作。導入して終わらないAI支援。実務に役立つ仕組みづくりを、丁寧に伴走しながら支援します。</p>
+
+        <blockquote class="about-mission fade-in">
+          <p class="about-mission__text">
+            ただ作るだけでも、ただ導入するだけでもない。<br class="pc-only">
+            事業にとって<strong>本当に意味のある仕組み</strong>として機能することを、私たちは大切にしています。
+          </p>
+        </blockquote>
+
+        <div class="about-pillars fade-in">
+          <article class="about-pillar">
+            <div class="about-pillar__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3 class="about-pillar__title">HP制作</h3>
+            <p class="about-pillar__desc">見た目だけで終わらない。目的・導線・信頼感まで設計した、事業の顔をつくる。</p>
+          </article>
+          <article class="about-pillar">
+            <div class="about-pillar__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </div>
+            <h3 class="about-pillar__title">AI支援導入</h3>
+            <p class="about-pillar__desc">ツール紹介で終わらない。現場で使える形まで落とし込み、定着まで伴走する。</p>
+          </article>
+          <article class="about-pillar">
+            <div class="about-pillar__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="about-pillar__title">丁寧な伴走</h3>
+            <p class="about-pillar__desc">小さく始めて、使いながら育てる。外注ではなく、成長のパートナーとして並走する。</p>
+          </article>
         </div>
-        <figure class="concept__visual fade-in">
-          <img src="assets/images/about-hero-growth.png" alt="HP制作とAI導入が仕組みでつながり、問い合わせ増・運用改善・事業成長につながる流れの図解" class="concept__img" width="1200" height="675" loading="lazy">
-        </figure>
+
+        <div class="about-philosophy fade-in">
+          <div class="about-philosophy__item">
+            <span class="about-philosophy__num">01</span>
+            <div>
+              <h3 class="about-philosophy__title">美しさと実用性の両立</h3>
+              <p class="about-philosophy__desc">デザインの完成度と、現場で使える実用性。その両方を妥協なく追求します。</p>
+            </div>
+          </div>
+          <div class="about-philosophy__item">
+            <span class="about-philosophy__num">02</span>
+            <div>
+              <h3 class="about-philosophy__title">静かだけれど、確かな成長</h3>
+              <p class="about-philosophy__desc">派手な宣伝ではなく、事業の土台を整え、着実に成果につながる支援を行います。</p>
+            </div>
+          </div>
+          <div class="about-philosophy__item">
+            <span class="about-philosophy__num">03</span>
+            <div>
+              <h3 class="about-philosophy__title">経営視点で見据える</h3>
+              <p class="about-philosophy__desc">制作・導入の先にある事業成長まで見据え、経営・営業・プロダクトを横断して支援します。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Why -->
     <section class="section" id="why" aria-labelledby="why-heading">
       <div class="container">
         <div class="section__header fade-in">
           <p class="section__label">WHY LOCAL GROWTH</p>
           <h2 class="section__title" id="why-heading">選ばれる理由</h2>
         </div>
-        <div class="why__grid">
-          <article class="card why__card fade-in">
-            <span class="why__number-bg" aria-hidden="true">01</span>
-            <h3 class="why__title">見た目だけで終わらない</h3>
-            <p class="why__desc">デザイン性だけでなく、目的・導線・信頼感まで設計します。</p>
+        <div class="about-why-grid">
+          <article class="about-why-card fade-in">
+            <span class="about-why-card__num" aria-hidden="true">01</span>
+            <div class="about-why-card__icon" aria-hidden="true"></div>
+            <h3 class="about-why-card__title">見た目だけで終わらない</h3>
+            <p class="about-why-card__desc">デザイン性だけでなく、目的・導線・信頼感まで設計します。</p>
           </article>
-          <article class="card why__card fade-in">
-            <span class="why__number-bg" aria-hidden="true">02</span>
-            <h3 class="why__title">AIを"実務に使える形"で支援</h3>
-            <p class="why__desc">ツール紹介で終わらず、現場で使える形まで落とし込みます。</p>
+          <article class="about-why-card fade-in">
+            <span class="about-why-card__num" aria-hidden="true">02</span>
+            <div class="about-why-card__icon" aria-hidden="true"></div>
+            <h3 class="about-why-card__title">AIを"実務に使える形"で支援</h3>
+            <p class="about-why-card__desc">ツール紹介で終わらず、現場で使える形まで落とし込みます。</p>
           </article>
-          <article class="card why__card fade-in">
-            <span class="why__number-bg" aria-hidden="true">03</span>
-            <h3 class="why__title">小さく始めて、丁寧に育てる</h3>
-            <p class="why__desc">最初から大きく作りすぎず、実際に使いながら改善していくスタイルです。</p>
+          <article class="about-why-card fade-in">
+            <span class="about-why-card__num" aria-hidden="true">03</span>
+            <div class="about-why-card__icon" aria-hidden="true"></div>
+            <h3 class="about-why-card__title">小さく始めて、丁寧に育てる</h3>
+            <p class="about-why-card__desc">最初から大きく作りすぎず、実際に使いながら改善していくスタイルです。</p>
           </article>
-          <article class="card why__card fade-in">
-            <span class="why__number-bg" aria-hidden="true">04</span>
-            <h3 class="why__title">経営・営業・プロダクトを横断して見られる</h3>
-            <p class="why__desc">単なる制作会社ではなく、事業の成長まで見据えた支援を行います。</p>
+          <article class="about-why-card fade-in">
+            <span class="about-why-card__num" aria-hidden="true">04</span>
+            <div class="about-why-card__icon" aria-hidden="true"></div>
+            <h3 class="about-why-card__title">経営・営業・プロダクトを横断</h3>
+            <p class="about-why-card__desc">単なる制作会社ではなく、事業の成長まで見据えた支援を行います。</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- For Who -->
     <section class="section section--alt" id="for-who" aria-labelledby="for-who-heading">
       <div class="container">
         <div class="section__header fade-in">
           <p class="section__label">FOR WHO</p>
           <h2 class="section__title" id="for-who-heading">こんな方におすすめ</h2>
         </div>
-        <ul class="for-who__list for-who__list--timeline fade-in">
-          <li class="for-who__item">会社の信頼感を高めるホームページを作りたい</li>
-          <li class="for-who__item">何からAIを導入すればいいかわからない</li>
-          <li class="for-who__item">AIを触ってみたが、実務への落とし込みが難しい</li>
-          <li class="for-who__item">営業や業務の効率をもっと上げたい</li>
-          <li class="for-who__item">外注ではなく、伴走してくれる相手を探している</li>
+        <ul class="about-audience">
+          <li class="about-audience__item fade-in">
+            <span class="about-audience__check" aria-hidden="true">✓</span>
+            <span class="about-audience__text">会社の信頼感を高めるホームページを作りたい</span>
+          </li>
+          <li class="about-audience__item fade-in">
+            <span class="about-audience__check" aria-hidden="true">✓</span>
+            <span class="about-audience__text">何からAIを導入すればいいかわからない</span>
+          </li>
+          <li class="about-audience__item fade-in">
+            <span class="about-audience__check" aria-hidden="true">✓</span>
+            <span class="about-audience__text">AIを触ってみたが、実務への落とし込みが難しい</span>
+          </li>
+          <li class="about-audience__item fade-in">
+            <span class="about-audience__check" aria-hidden="true">✓</span>
+            <span class="about-audience__text">営業や業務の効率をもっと上げたい</span>
+          </li>
+          <li class="about-audience__item fade-in about-audience__item--wide">
+            <span class="about-audience__check" aria-hidden="true">✓</span>
+            <span class="about-audience__text">外注ではなく、伴走してくれる相手を探している</span>
+          </li>
         </ul>
       </div>
     </section>
 
+    <!-- Flow -->
     <section class="section" id="flow" aria-labelledby="flow-heading">
       <div class="container">
         <div class="section__header fade-in">
           <p class="section__label">FLOW</p>
           <h2 class="section__title" id="flow-heading">導入・相談の流れ</h2>
         </div>
-        <ol class="flow__list flow__list--infographic fade-in">
-          <li class="flow__item"><span class="flow__step">01</span><div class="flow__content"><h3 class="flow__title">お問い合わせ</h3><p class="flow__desc">フォームまたはメールで、お気軽にご連絡ください。</p></div></li>
-          <li class="flow__item"><span class="flow__step">02</span><div class="flow__content"><h3 class="flow__title">ヒアリング</h3><p class="flow__desc">現状や課題、ご希望を丁寧にお伺いします。</p></div></li>
-          <li class="flow__item"><span class="flow__step">03</span><div class="flow__content"><h3 class="flow__title">ご提案</h3><p class="flow__desc">課題に合わせた最適なプランをご提案します。</p></div></li>
-          <li class="flow__item"><span class="flow__step">04</span><div class="flow__content"><h3 class="flow__title">制作 / 導入支援開始</h3><p class="flow__desc">合意のうえ、制作またはAI導入支援をスタートします。</p></div></li>
-          <li class="flow__item"><span class="flow__step">05</span><div class="flow__content"><h3 class="flow__title">運用 / 改善</h3><p class="flow__desc">導入後も継続的にサポートし、成果を育てていきます。</p></div></li>
+        <ol class="about-flow fade-in">
+          <li class="about-flow__item">
+            <span class="about-flow__num">01</span>
+            <div class="about-flow__body">
+              <h3 class="about-flow__title">お問い合わせ</h3>
+              <p class="about-flow__desc">フォームまたはメールで、お気軽にご連絡ください。</p>
+            </div>
+          </li>
+          <li class="about-flow__item">
+            <span class="about-flow__num">02</span>
+            <div class="about-flow__body">
+              <h3 class="about-flow__title">ヒアリング</h3>
+              <p class="about-flow__desc">現状や課題、ご希望を丁寧にお伺いします。</p>
+            </div>
+          </li>
+          <li class="about-flow__item">
+            <span class="about-flow__num">03</span>
+            <div class="about-flow__body">
+              <h3 class="about-flow__title">ご提案</h3>
+              <p class="about-flow__desc">課題に合わせた最適なプランをご提案します。</p>
+            </div>
+          </li>
+          <li class="about-flow__item">
+            <span class="about-flow__num">04</span>
+            <div class="about-flow__body">
+              <h3 class="about-flow__title">制作 / 導入支援開始</h3>
+              <p class="about-flow__desc">合意のうえ、制作またはAI導入支援をスタートします。</p>
+            </div>
+          </li>
+          <li class="about-flow__item">
+            <span class="about-flow__num">05</span>
+            <div class="about-flow__body">
+              <h3 class="about-flow__title">運用 / 改善</h3>
+              <p class="about-flow__desc">導入後も継続的にサポートし、成果を育てていきます。</p>
+            </div>
+          </li>
         </ol>
       </div>
     </section>
 
+    <!-- Team -->
     <section class="section section--alt" id="team" aria-labelledby="team-heading">
       <div class="container">
         <div class="section__header fade-in">
           <p class="section__label">TEAM</p>
           <h2 class="section__title" id="team-heading">役員紹介</h2>
         </div>
-        <div class="team__grid">
-          <article class="card team__card fade-in">
-            <div class="team__photo" aria-hidden="true"><span class="team__initial">北</span></div>
-            <span class="team__badge">CEO</span>
-            <h3 class="team__name">北岡俊也</h3>
-            <p class="team__bio">建設業の現場感覚と経営視点を持ち、地域企業の成長を見据えて事業を推進。</p>
+        <div class="about-team">
+          <article class="about-team-card fade-in">
+            <div class="about-team-card__avatar" aria-hidden="true"><span>北</span></div>
+            <span class="about-team-card__role">CEO</span>
+            <h3 class="about-team-card__name">北岡俊也</h3>
+            <p class="about-team-card__bio">建設業の現場感覚と経営視点を持ち、地域企業の成長を見据えて事業を推進。</p>
           </article>
-          <article class="card team__card fade-in">
-            <div class="team__photo" aria-hidden="true"><span class="team__initial">大</span></div>
-            <span class="team__badge">CPO</span>
-            <h3 class="team__name">大津祐太</h3>
-            <p class="team__bio">プロダクト設計、HP制作、AI活用設計を担い、実務に落ちる仕組みづくりを担当。</p>
+          <article class="about-team-card fade-in">
+            <div class="about-team-card__avatar" aria-hidden="true"><span>大</span></div>
+            <span class="about-team-card__role">CPO</span>
+            <h3 class="about-team-card__name">大津祐太</h3>
+            <p class="about-team-card__bio">プロダクト設計、HP制作、AI活用設計を担い、実務に落ちる仕組みづくりを担当。</p>
           </article>
-          <article class="card team__card fade-in">
-            <div class="team__photo" aria-hidden="true"><span class="team__initial">松</span></div>
-            <span class="team__badge">CRO</span>
-            <h3 class="team__name">松本祐太郎</h3>
-            <p class="team__bio">建設・保険・飲食・不動産領域に強みを持ち、営業戦略と事業成長をリード。</p>
+          <article class="about-team-card fade-in">
+            <div class="about-team-card__avatar" aria-hidden="true"><span>松</span></div>
+            <span class="about-team-card__role">CRO</span>
+            <h3 class="about-team-card__name">松本祐太郎</h3>
+            <p class="about-team-card__bio">建設・保険・飲食・不動産領域に強みを持ち、営業戦略と事業成長をリード。</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Company -->
     <section class="section" id="company" aria-labelledby="company-heading">
       <div class="container">
         <div class="section__header fade-in">
           <p class="section__label">COMPANY</p>
           <h2 class="section__title" id="company-heading">会社情報</h2>
         </div>
-        <div class="split-layout fade-in">
-          <dl class="company__list">
-            <div class="company__row"><dt>会社名</dt><dd>株式会社LOCAL GROWTH</dd></div>
-            <div class="company__row"><dt>役員</dt><dd>CEO 北岡俊也 / CPO 大津祐太 / CRO 松本祐太郎</dd></div>
-            <div class="company__row"><dt>事業内容</dt><dd>HP作成 / AI支援導入事業</dd></div>
-            <div class="company__row"><dt>所在地</dt><dd>〒850-0824 長崎県長崎市三景台町1−27</dd></div>
-            <div class="company__row"><dt>メール</dt><dd><a href="mailto:contact@localgrowth.jp">contact@localgrowth.jp</a>（仮）</dd></div>
-            <div class="company__row"><dt>電話</dt><dd><a href="tel:0300000000">03-0000-0000</a>（仮）</dd></div>
-          </dl>
-          <div class="company__map">
-            <iframe
-              class="company__map-iframe"
-              src="https://www.google.com/maps?q=%E3%80%92850-0824+%E9%95%B7%E5%B4%8E%E7%9C%8C%E9%95%B7%E5%B4%8E%E5%B8%82%E4%B8%89%E6%99%AF%E5%8F%B0%E7%94%BA1-27&hl=ja&z=16&output=embed"
-              title="株式会社LOCAL GROWTH 所在地マップ"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
+        <div class="about-company fade-in">
+          <div class="about-company__info">
+            <dl class="about-company__list">
+              <div class="about-company__row">
+                <dt>会社名</dt>
+                <dd>株式会社LOCAL GROWTH</dd>
+              </div>
+              <div class="about-company__row">
+                <dt>役員</dt>
+                <dd>CEO 北岡俊也 / CPO 大津祐太 / CRO 松本祐太郎</dd>
+              </div>
+              <div class="about-company__row">
+                <dt>事業内容</dt>
+                <dd>HP作成 / AI支援導入事業</dd>
+              </div>
+              <div class="about-company__row">
+                <dt>所在地</dt>
+                <dd>〒850-0824 長崎県長崎市三景台町1−27</dd>
+              </div>
+              <div class="about-company__row">
+                <dt>メール</dt>
+                <dd><a href="mailto:youtaidajin4@gmail.com">youtaidajin4@gmail.com</a></dd>
+              </div>
+              <div class="about-company__row">
+                <dt>電話</dt>
+                <dd><a href="tel:0300000000">03-0000-0000</a>（仮）</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="about-company__map">
+            <div class="about-company__map-frame">
+              <iframe
+                class="company__map-iframe"
+                src="https://www.google.com/maps?q=%E3%80%92850-0824+%E9%95%B7%E5%B4%8E%E7%9C%8C%E9%95%B7%E5%B4%8E%E5%B8%82%E4%B8%89%E6%99%AF%E5%8F%B0%E7%94%BA1-27&hl=ja&z=16&output=embed"
+                title="株式会社LOCAL GROWTH 所在地マップ"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
             <p class="company__map-address">〒850-0824 長崎県長崎市三景台町1−27</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section cta-band" aria-labelledby="cta-about">
+    <section class="section cta-band cta-band--strong" aria-labelledby="cta-about">
       <div class="container cta-band__inner fade-in">
         <h2 class="cta-band__title" id="cta-about">ご相談をお待ちしています。</h2>
         <p class="cta-band__text">ホームページ制作も、AI導入も。まずはお気軽にご連絡ください。</p>

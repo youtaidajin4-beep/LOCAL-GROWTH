@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="株式会社LOCAL GROWTHの無料相談予約。ホームページ制作・AI導入のご相談は、ご希望日時を選んでお申し込みください。">
   <title>無料相談のご予約 | 株式会社LOCAL GROWTH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,8 +55,13 @@
             </div>
           </div>
 
-          <!-- FORM: 送信先を設定 — 現在はダミー実装です -->
-          <form class="contact__form booking-form fade-in" id="contact-form" novalidate>
+          <form
+            class="contact__form booking-form fade-in"
+            id="contact-form"
+            novalidate
+            data-form-endpoint="https://formsubmit.co/ajax/youtaidajin4@gmail.com"
+          >
+            <input type="text" name="_honey" class="form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <ol class="booking-steps" aria-label="予約フォームの進捗">
               <li class="booking-steps__item is-active" data-step-indicator="1">
                 <span class="booking-steps__num">1</span>
@@ -188,6 +193,9 @@
 
             <p class="form__success" id="form-success" role="status" hidden>
               ご予約を受け付けました。確認のうえ、担当者よりご連絡いたします。
+            </p>
+            <p class="form__error" id="form-error" role="alert" hidden>
+              送信に失敗しました。時間をおいて再度お試しください。
             </p>
           </form>
         </div>
