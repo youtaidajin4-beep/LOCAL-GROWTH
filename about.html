@@ -37,31 +37,38 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="about-hero" aria-labelledby="about-heading">
-      <div class="hero__arc" aria-hidden="true"></div>
-      <div class="container about-hero__inner">
-        <div class="about-hero__content">
-          <p class="hero__label animate-on-scroll givery-slide" data-hero-animate>ABOUT</p>
-          <h1 class="about-hero__title animate-on-scroll givery-slide" id="about-heading" data-hero-animate>地方の成長を、<span class="text-accent">仕組み</span>で支える。</h1>
-          <p class="about-hero__lead animate-on-scroll givery-fade-up" data-hero-animate>
-            人を増やす前に、仕組みを整える。LOCAL GROWTHは、HP制作とAI支援の2軸から、企業の成長を静かに、強く後押しします。
+    <section class="page-hero page-hero--impact page-hero--about" aria-labelledby="about-heading">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="assets/images/hero-main.png" alt="" class="page-hero__backdrop-img hero__parallax-layer" width="1920" height="1080" loading="eager">
+        <div class="page-hero__backdrop-fade"></div>
+      </div>
+      <div class="hero__arc page-hero__arc" aria-hidden="true"></div>
+      <div class="container page-hero__inner page-hero__inner--impact page-hero__inner--about">
+        <div class="page-hero__content">
+          <p class="hero__eyebrow animate-on-scroll givery-slide" data-hero-animate>COMPANY</p>
+          <h1 class="page-hero__headline-en animate-on-scroll givery-slide" id="about-heading" data-hero-animate>ABOUT</h1>
+          <p class="section__label text-band animate-on-scroll givery-slide" data-hero-animate>
+            <span class="text-band__inner">地方の成長を、仕組みで支える。</span>
           </p>
-          <ul class="about-hero__stats animate-on-scroll givery-fade-up" data-hero-animate aria-label="LOCAL GROWTHの特徴">
-            <li class="about-hero__stat">
-              <span class="about-hero__stat-value">2</span>
-              <span class="about-hero__stat-label">つの事業軸</span>
-            </li>
-            <li class="about-hero__stat">
-              <span class="about-hero__stat-value">3</span>
-              <span class="about-hero__stat-label">名の役員体制</span>
-            </li>
-            <li class="about-hero__stat">
-              <span class="about-hero__stat-value">1</span>
-              <span class="about-hero__stat-label">つの伴走スタイル</span>
-            </li>
-          </ul>
+          <p class="page-hero__lead animate-on-scroll givery-fade-up" data-hero-animate>
+            人を増やす前に、仕組みを整える。LOCAL GROWTHは、長崎を拠点にHP制作とAI支援の2軸から、企業の成長を静かに、強く後押しします。
+          </p>
+          <div class="stat-strip animate-on-scroll givery-fade-up" data-hero-animate aria-label="LOCAL GROWTHの特徴">
+            <div class="stat-strip__item">
+              <span class="stat-strip__value" data-count="2">0</span>
+              <span class="stat-strip__label">つの事業軸</span>
+            </div>
+            <div class="stat-strip__item">
+              <span class="stat-strip__value" data-count="3">0</span>
+              <span class="stat-strip__label">名の役員体制</span>
+            </div>
+            <div class="stat-strip__item">
+              <span class="stat-strip__value">長崎</span>
+              <span class="stat-strip__label">拠点 / 全国オンライン</span>
+            </div>
+          </div>
         </div>
-        <div class="about-hero__visual animate-on-scroll givery-fade-up" data-hero-animate aria-hidden="true">
+        <div class="about-hero__visual pc-only animate-on-scroll givery-fade-up" data-hero-animate aria-hidden="true">
           <div class="about-orbit">
             <div class="about-orbit__ring about-orbit__ring--outer"></div>
             <div class="about-orbit__ring about-orbit__ring--inner"></div>
@@ -368,6 +375,8 @@
       <p class="footer__copy">&copy; 2026 株式会社LOCAL GROWTH</p>
     </div>
   </footer>
+
+  <a href="/contact" class="floating-cta" aria-label="無料相談する">相談する</a>
 
   <script src="script.js"></script>
 </body>

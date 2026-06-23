@@ -177,6 +177,70 @@
     }, { passive: true });
   }
 
+  /* --- Hero スクロールヒント --- */
+  document.querySelectorAll('[data-scroll-target]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const target = document.querySelector(btn.getAttribute('data-scroll-target'));
+      if (!target) return;
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start'
+      });
+    });
+  });
+
+  /* --- 数値カウントアップ --- */
+  function animateCount(el) {
+    const target = parseFloat(el.getAttribute('data-count'));
+    if (isNaN(target)) return;
+
+    const decimals = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
+    const prefix = el.getAttribute('data-count-prefix') || '';
+    const suffix = el.getAttribute('data-count-suffix') || '';
+    const duration = 1200;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = (target * eased).toFixed(decimals);
+      el.textContent = prefix + value + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  const countElements = document.querySelectorAll('[data-count]');
+
+  if (prefersReducedMotion) {
+    countElements.forEach(function (el) {
+      const target = el.getAttribute('data-count');
+      const prefix = el.getAttribute('data-count-prefix') || '';
+      const suffix = el.getAttribute('data-count-suffix') || '';
+      const decimals = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
+      if (target) {
+        el.textContent = prefix + parseFloat(target).toFixed(decimals) + suffix;
+      }
+    });
+  } else if (countElements.length > 0) {
+    const countObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            countObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    countElements.forEach(function (el) {
+      countObserver.observe(el);
+    });
+  }
+
   /* --- サービスカード グロー追従 --- */
   if (!prefersReducedMotion) {
     document.querySelectorAll('[data-glow]').forEach(function (card) {

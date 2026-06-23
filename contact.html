@@ -36,14 +36,33 @@
 
   <main id="main">
 
-    <section class="section section--contact section--decor section--fade-top" id="contact" aria-labelledby="contact-heading-en">
+    <section class="page-hero page-hero--impact page-hero--compact page-hero--contact" aria-labelledby="contact-heading">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="assets/images/hero-main.png" alt="" class="page-hero__backdrop-img" width="1920" height="1080" loading="eager">
+        <div class="page-hero__backdrop-fade"></div>
+      </div>
+      <div class="hero__arc page-hero__arc" aria-hidden="true"></div>
+      <div class="container page-hero__inner page-hero__inner--impact">
+        <div class="page-hero__content">
+          <p class="hero__eyebrow animate-on-scroll givery-slide" data-hero-animate>RESERVATION</p>
+          <h1 class="page-hero__headline-en animate-on-scroll givery-slide" id="contact-heading" data-hero-animate>CONTACT</h1>
+          <p class="section__label text-band animate-on-scroll givery-slide" data-hero-animate>
+            <span class="text-band__inner">まずは60分、無料で。</span>
+          </p>
+          <p class="page-hero__lead animate-on-scroll givery-fade-up" data-hero-animate>
+            長崎での対面・オンラインどちらも対応。3ステップでご希望日時をお選びいただけます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact section--decor section--fade-top" id="contact" aria-labelledby="contact-form-heading">
       <div class="container">
         <div class="contact__layout">
           <div class="contact__side">
-            <h1 class="section__title-en animate-on-scroll givery-slide" id="contact-heading-en">RESERVATION</h1>
-            <p class="section__label text-band animate-on-scroll givery-slide"><span class="text-band__inner">無料相談のご予約</span></p>
+            <h2 class="contact__title visually-hidden" id="contact-form-heading">無料相談予約フォーム</h2>
             <p class="contact__lead animate-on-scroll givery-fade-up" id="contact-context">
-              3ステップで、ご希望の日時をお選びいただけます。オンライン・対面どちらも対応。現状や課題の整理から、丁寧にご一緒します。
+              現状や課題の整理から、丁寧にご一緒します。HP制作・AI導入どちらのご相談もお気軽にどうぞ。
             </p>
             <ul class="trust-badges stagger-parent" aria-label="無料相談の特徴">
               <li class="trust-badges__item stagger-item animate-on-scroll givery-fade-up">完全無料</li>
@@ -217,6 +236,8 @@
       <p class="footer__copy">&copy; 2026 株式会社LOCAL GROWTH</p>
     </div>
   </footer>
+
+  <a href="/contact" class="floating-cta" aria-label="無料相談する">相談する</a>
 
   <script src="script.js"></script>
 </body>
