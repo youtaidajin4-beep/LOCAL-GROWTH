@@ -1,4 +1,12 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/service-hp", "destination": "/service-hp.html" },
+    { "source": "/service-ai", "destination": "/service-ai.html" },
+    { "source": "/demos/nexus-growth", "destination": "/demos/nexus-growth/index.html" },
+    { "source": "/demos/ai-lab", "destination": "/demos/ai-lab/index.html" }
+  ]
 }

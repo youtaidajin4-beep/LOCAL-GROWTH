@@ -384,6 +384,31 @@ html.is-embedded .container {
   padding-bottom: 24px;
 }
 
+html.is-embedded .tab {
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 13px;
+}
+
+html.is-embedded .run-btn {
+  min-height: 48px;
+  font-size: 15px;
+}
+
+html.is-embedded .split {
+  gap: 12px;
+}
+
+@media (max-width: 767px) {
+  html.is-embedded .panel__body {
+    padding-bottom: 8px;
+  }
+
+  html.is-embedded .tabs__scroll {
+    padding-bottom: 4px;
+  }
+}
+
 .demo-back {
   display: none;
   position: sticky;

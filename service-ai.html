@@ -36,11 +36,19 @@
 
   <main id="main">
 
-    <section class="page-hero" aria-labelledby="page-hero-heading">
-      <div class="container page-hero__inner">
+    <section class="page-hero page-hero--impact page-hero--ai" aria-labelledby="page-hero-heading">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="assets/images/service-ai.png" alt="" class="page-hero__backdrop-img" width="1920" height="1080" loading="eager">
+        <div class="page-hero__backdrop-fade"></div>
+      </div>
+      <div class="hero__arc page-hero__arc" aria-hidden="true"></div>
+      <div class="container page-hero__inner page-hero__inner--impact">
         <div class="page-hero__content">
-          <p class="section__title-en animate-on-scroll givery-slide" data-hero-animate>SERVICE 02</p>
-          <h1 class="page-hero__title animate-on-scroll givery-slide" id="page-hero-heading" data-hero-animate>AIを、現場で使える形に。</h1>
+          <p class="hero__eyebrow animate-on-scroll givery-slide" data-hero-animate>SERVICE 02</p>
+          <h1 class="page-hero__headline-en animate-on-scroll givery-slide" id="page-hero-heading" data-hero-animate>AI</h1>
+          <p class="section__label text-band animate-on-scroll givery-slide" data-hero-animate>
+            <span class="text-band__inner">現場で使える形に。</span>
+          </p>
           <p class="page-hero__lead animate-on-scroll givery-fade-up" data-hero-animate>AIをただ使うのではなく、実務に定着する仕組みとして導入支援します。情報整理、業務効率化、営業支援まで、企業に合った形で伴走します。</p>
           <ul class="hero__badges animate-on-scroll givery-fade-up" data-hero-animate aria-label="AI支援の特徴">
             <li class="hero__badge">伴走支援</li>
@@ -51,9 +59,6 @@
             <a href="/contact?type=ai" class="btn btn--primary btn--lg">無料相談する</a>
             <a href="#use-cases" class="btn btn--outline btn--lg">活用事例を見る</a>
           </div>
-        </div>
-        <div class="page-hero__visual animate-on-scroll givery-fade-up" data-hero-animate>
-          <img src="assets/images/service-ai.png" alt="AI支援導入のイメージ" class="page-hero__img" width="640" height="480" loading="eager">
         </div>
       </div>
     </section>
@@ -95,25 +100,25 @@
           <p class="works__lead">業種を問わず、現場の「面倒な作業」から始められます。タップでデモの該当シーンを見られます。</p>
         </div>
         <div class="use-case-grid stagger-parent">
-          <a href="/demos/ai-lab#minutes" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
+          <a href="demos/ai-lab/index.html#minutes" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
             <span class="use-case-card__icon" aria-hidden="true">📝</span>
             <h3 class="use-case-card__title">議事録・報告書の要約</h3>
             <p class="use-case-card__desc">長い会議録を要点だけに整理。アクション項目も自動抽出。</p>
             <span class="use-case-card__metric">作業時間 -90%</span>
           </a>
-          <a href="/demos/ai-lab#email" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
+          <a href="demos/ai-lab/index.html#email" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
             <span class="use-case-card__icon" aria-hidden="true">✉️</span>
             <h3 class="use-case-card__title">営業メール・提案書ドラフト</h3>
             <p class="use-case-card__desc">顧客情報から提案メールのたたき台を自動生成。修正するだけで送れる。</p>
             <span class="use-case-card__metric">作成時間 -80%</span>
           </a>
-          <a href="/demos/ai-lab#knowledge" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
+          <a href="demos/ai-lab/index.html#knowledge" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
             <span class="use-case-card__icon" aria-hidden="true">🔍</span>
             <h3 class="use-case-card__title">社内ナレッジの即時検索</h3>
             <p class="use-case-card__desc">マニュアルや過去資料をAIが理解。質問すればすぐ答えが返る。</p>
             <span class="use-case-card__metric">検索 即時化</span>
           </a>
-          <a href="/demos/ai-lab#report" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
+          <a href="demos/ai-lab/index.html#report" class="use-case-card stagger-item animate-on-scroll givery-fade-up" target="_blank" rel="noopener noreferrer">
             <span class="use-case-card__icon" aria-hidden="true">📋</span>
             <h3 class="use-case-card__title">日報・定型業務の自動化</h3>
             <p class="use-case-card__desc">箇条書きメモから整形された日報へ。毎日のルーティンを軽くする。</p>
@@ -147,41 +152,34 @@
         </div>
 
         <div class="works__preview animate-on-scroll givery-fade-up">
-          <div class="demo-browser demo-browser--desktop">
+          <div class="demo-browser" data-demo-browser>
             <div class="demo-browser__chrome">
               <div class="demo-browser__dots" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
               <div class="demo-browser__url" aria-hidden="true">demo.localgrowth.jp/ai-lab</div>
             </div>
-            <iframe
-              class="demo-browser__iframe"
-              src="/demos/ai-lab"
-              title="AI Lab ユースケースデモのプレビュー"
-              loading="lazy"
-              allow="fullscreen"
-            ></iframe>
-          </div>
-
-          <div class="demo-launch demo-launch--mobile" aria-label="スマホ向けデモ体験">
-            <div class="demo-launch__screen demo-launch__screen--ai" aria-hidden="true">
-              <span class="demo-launch__pill">AI Lab Demo</span>
-              <span class="demo-launch__headline">4つの業務シーンをタップで体験</span>
-              <span class="demo-launch__chips">
-                <span>議事録</span>
-                <span>営業メール</span>
-                <span>ナレッジ</span>
-                <span>日報</span>
-              </span>
+            <div class="demo-browser__frame">
+              <iframe
+                class="demo-browser__iframe"
+                src="demos/ai-lab/index.html"
+                title="AI Lab ユースケースデモのプレビュー"
+                loading="eager"
+                allow="fullscreen"
+                data-demo-iframe
+                data-demo-fallback="demos/ai-lab/index.html"
+              ></iframe>
             </div>
-            <p class="demo-launch__text">スマホでもタブ切り替えと「AIで実行」ボタンが使えます。業務がどう変わるか、フル画面でお試しください。</p>
-            <a href="/demos/ai-lab" class="btn btn--primary btn--lg btn--full demo-launch__btn">デモを体験する</a>
+            <p class="demo-browser__hint sp-only">タブ切り替えと「AIで実行」がそのまま使えます。操作しやすいようフル画面もご利用ください。</p>
+          </div>
+          <div class="works__demo-actions">
+            <a href="demos/ai-lab/index.html" class="btn btn--primary btn--lg btn--full works__demo-open" target="_blank" rel="noopener noreferrer">フル画面でデモを体験する</a>
           </div>
         </div>
 
-        <p class="animate-on-scroll givery-fade-up works__fullscreen-wrap">
-          <a href="/demos/ai-lab" class="works__fullscreen works__fullscreen--desktop" target="_blank" rel="noopener noreferrer">
-            フルスクリーンでデモを見る →
+        <p class="animate-on-scroll givery-fade-up works__fullscreen-wrap pc-only">
+          <a href="demos/ai-lab/index.html" class="works__fullscreen" target="_blank" rel="noopener noreferrer">
+            別タブでデモを開く →
           </a>
         </p>
 
@@ -191,14 +189,14 @@
             <h3 class="benefit-card__title">業務効率化</h3>
             <span class="works-metric-card__value">時間 -60%</span>
             <p class="benefit-card__desc">繰り返し作業をAIに任せ、本当に大事な仕事に集中。議事録・日報・メール作成から始められます。</p>
-            <a href="/demos/ai-lab#minutes" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">議事録デモを見る →</a>
+            <a href="demos/ai-lab/index.html#minutes" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">議事録デモを見る →</a>
           </article>
           <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
             <span class="benefit-card__num">02</span>
             <h3 class="benefit-card__title">情報の即時活用</h3>
             <span class="works-metric-card__value">検索 即時化</span>
             <p class="benefit-card__desc">散らばったナレッジをAIが理解。探す時間をなくし、現場の判断スピードを上げます。</p>
-            <a href="/demos/ai-lab#knowledge" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">ナレッジデモを見る →</a>
+            <a href="demos/ai-lab/index.html#knowledge" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">ナレッジデモを見る →</a>
           </article>
           <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
             <span class="benefit-card__num">03</span>

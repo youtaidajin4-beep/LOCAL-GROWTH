@@ -36,15 +36,24 @@
 
   <main id="main">
 
-    <section class="page-hero" aria-labelledby="page-hero-heading">
-      <div class="container page-hero__inner">
+    <section class="page-hero page-hero--impact page-hero--hp" aria-labelledby="page-hero-heading">
+      <div class="page-hero__backdrop" aria-hidden="true">
+        <img src="assets/images/service-web.png" alt="" class="page-hero__backdrop-img" width="1920" height="1080" loading="eager">
+        <div class="page-hero__backdrop-fade"></div>
+      </div>
+      <div class="hero__arc page-hero__arc" aria-hidden="true"></div>
+      <div class="container page-hero__inner page-hero__inner--impact">
         <div class="page-hero__content">
-          <p class="section__title-en animate-on-scroll givery-slide" data-hero-animate>SERVICE 01</p>
-          <h1 class="page-hero__title animate-on-scroll givery-slide" id="page-hero-heading" data-hero-animate>見た目だけで終わらないWeb。</h1>
+          <p class="hero__eyebrow animate-on-scroll givery-slide" data-hero-animate>SERVICE 01</p>
+          <h1 class="page-hero__headline-en animate-on-scroll givery-slide" id="page-hero-heading" data-hero-animate>WEB</h1>
+          <p class="section__label text-band animate-on-scroll givery-slide" data-hero-animate>
+            <span class="text-band__inner">見た目だけで終わらないWeb。</span>
+          </p>
           <p class="page-hero__lead animate-on-scroll givery-fade-up" data-hero-animate>企業の魅力を、信頼感のあるかたちで伝えるホームページを制作します。目的・導線・更新のしやすさまで、丁寧に設計します。</p>
-        </div>
-        <div class="page-hero__visual animate-on-scroll givery-fade-up" data-hero-animate>
-          <img src="assets/images/service-web.png" alt="ホームページ制作のイメージ" class="page-hero__img" width="640" height="480" loading="eager">
+          <div class="hero__actions animate-on-scroll givery-fade-up" data-hero-animate>
+            <a href="#works" class="btn btn--primary btn--lg">制作デモを見る</a>
+            <a href="/contact?type=hp" class="btn btn--outline btn--lg">無料相談する</a>
+          </div>
         </div>
       </div>
     </section>
@@ -84,40 +93,34 @@
         </div>
 
         <div class="works__preview animate-on-scroll givery-fade-up">
-          <div class="demo-browser demo-browser--desktop">
+          <div class="demo-browser" data-demo-browser>
             <div class="demo-browser__chrome">
               <div class="demo-browser__dots" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
               <div class="demo-browser__url" aria-hidden="true">demo.localgrowth.jp/nexus-growth</div>
             </div>
-            <iframe
-              class="demo-browser__iframe"
-              src="/demos/nexus-growth"
-              title="NEXUS GROWTH 制作デモのプレビュー"
-              loading="lazy"
-              allow="fullscreen"
-            ></iframe>
-          </div>
-
-          <div class="demo-launch demo-launch--mobile" aria-label="スマホ向けデモ体験">
-            <div class="demo-launch__screen demo-launch__screen--hp" aria-hidden="true">
-              <span class="demo-launch__pill">B2B Demo LP</span>
-              <span class="demo-launch__headline">成長のボトルネックを、データで突破。</span>
-              <span class="demo-launch__metrics">
-                <span>LCP 0.9s</span>
-                <span>CTR +240%</span>
-                <span>SEO 95+</span>
-              </span>
+            <div class="demo-browser__frame">
+              <iframe
+                class="demo-browser__iframe"
+                src="demos/nexus-growth/index.html"
+                title="NEXUS GROWTH 制作デモのプレビュー"
+                loading="eager"
+                allow="fullscreen"
+                data-demo-iframe
+                data-demo-fallback="demos/nexus-growth/index.html"
+              ></iframe>
             </div>
-            <p class="demo-launch__text">スマホではフル画面でスクロール・導線・CTAまで体験できます。制作クオリティをそのまま確認してください。</p>
-            <a href="/demos/nexus-growth" class="btn btn--primary btn--lg btn--full demo-launch__btn">デモを体験する</a>
+            <p class="demo-browser__hint sp-only">デモ内をスクロールして体験できます。見づらい場合は下のボタンからフル画面で開いてください。</p>
+          </div>
+          <div class="works__demo-actions">
+            <a href="demos/nexus-growth/index.html" class="btn btn--primary btn--lg btn--full works__demo-open" target="_blank" rel="noopener noreferrer">フル画面でデモを体験する</a>
           </div>
         </div>
 
-        <p class="animate-on-scroll givery-fade-up works__fullscreen-wrap">
-          <a href="/demos/nexus-growth" class="works__fullscreen works__fullscreen--desktop" target="_blank" rel="noopener noreferrer">
-            フルスクリーンでデモを見る →
+        <p class="animate-on-scroll givery-fade-up works__fullscreen-wrap pc-only">
+          <a href="demos/nexus-growth/index.html" class="works__fullscreen" target="_blank" rel="noopener noreferrer">
+            別タブでデモを開く →
           </a>
         </p>
 
@@ -127,21 +130,21 @@
             <h3 class="benefit-card__title">最先端デザイン</h3>
             <span class="works-metric-card__value">LCP 0.9s</span>
             <p class="benefit-card__desc">グラデーション・アニメーション・ガラスUI。静的HTMLでもモダンな体験を実現。軽量設計で表示速度も両立。</p>
-            <a href="/demos/nexus-growth#design" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">デモのデザインを見る →</a>
+            <a href="demos/nexus-growth/index.html#design" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">デモのデザインを見る →</a>
           </article>
           <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
             <span class="benefit-card__num">02</span>
             <h3 class="benefit-card__title">導線設計</h3>
             <span class="works-metric-card__value">CTR +240%</span>
             <p class="benefit-card__desc">ステッキーCTA・セクション誘導・マイクロCTAの三段構え。訪問者を迷わせず、問い合わせまで一本道で導きます。</p>
-            <a href="/demos/nexus-growth#funnel" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">導線マップを見る →</a>
+            <a href="demos/nexus-growth/index.html#funnel" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">導線マップを見る →</a>
           </article>
           <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
             <span class="benefit-card__num">03</span>
             <h3 class="benefit-card__title">SEO最適化</h3>
             <span class="works-metric-card__value">基盤 95+</span>
             <p class="benefit-card__desc">JSON-LD構造化データ・見出し階層・meta設計。検索エンジンとユーザーの両方に最適化された基盤を構築。</p>
-            <a href="/demos/nexus-growth#seo" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">SEOチェックを見る →</a>
+            <a href="demos/nexus-growth/index.html#seo" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">SEOチェックを見る →</a>
           </article>
         </div>
 

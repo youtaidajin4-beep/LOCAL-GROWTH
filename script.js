@@ -190,6 +190,53 @@
     });
   }
 
+  /* --- デモ iframe --- */
+  document.querySelectorAll('[data-demo-iframe]').forEach(function (iframe) {
+    const fallback = iframe.getAttribute('data-demo-fallback');
+    const browser = iframe.closest('[data-demo-browser]');
+    let loaded = false;
+
+    function showDemoError() {
+      if (!browser || browser.querySelector('.demo-browser__error')) return;
+      const err = document.createElement('div');
+      err.className = 'demo-browser__error is-visible';
+      err.setAttribute('role', 'alert');
+      const text = document.createElement('p');
+      text.className = 'demo-browser__error-text';
+      text.textContent = 'デモの読み込みに失敗しました。下のボタンからフル画面でお試しください。';
+      err.appendChild(text);
+      if (fallback) {
+        const link = document.createElement('a');
+        link.href = fallback;
+        link.className = 'btn btn--primary btn--full';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'フル画面でデモを開く';
+        err.appendChild(link);
+      }
+      iframe.hidden = true;
+      iframe.parentNode.appendChild(err);
+    }
+
+    iframe.addEventListener('load', function () {
+      loaded = true;
+      try {
+        const doc = iframe.contentDocument;
+        if (doc && doc.body && doc.body.innerText.indexOf('404') === 0) {
+          showDemoError();
+        }
+      } catch (e) {
+        /* same-origin only */
+      }
+    });
+
+    iframe.addEventListener('error', showDemoError);
+
+    window.setTimeout(function () {
+      if (!loaded) showDemoError();
+    }, 12000);
+  });
+
   /* --- お問い合わせ: URLパラメータで種別プリセット --- */
   const contactContext = document.getElementById('contact-context');
   const params = new URLSearchParams(window.location.search);
