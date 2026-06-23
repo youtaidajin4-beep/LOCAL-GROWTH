@@ -6,6 +6,13 @@
 (function () {
   'use strict';
 
+  document.documentElement.classList.add('is-loading');
+
+  window.addEventListener('load', function () {
+    document.documentElement.classList.remove('is-loading');
+    document.documentElement.classList.add('is-loaded');
+  });
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
@@ -91,58 +98,82 @@
     });
   });
 
-  /* --- フェードイン --- */
-  const fadeElements = document.querySelectorAll('.fade-in');
+  /* --- スクロール連動アニメーション --- */
+  const animateElements = document.querySelectorAll('.animate-on-scroll, .fade-in');
 
-  if (fadeElements.length > 0 && !prefersReducedMotion) {
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
-    );
+  function revealElement(el) {
+    el.classList.add('is-visible');
+  }
 
-    fadeElements.forEach(function (el) {
-      observer.observe(el);
-    });
-  } else {
-    fadeElements.forEach(function (el) {
-      el.classList.add('is-visible');
+  function revealHero() {
+    const heroItems = document.querySelectorAll('[data-hero-animate]');
+    heroItems.forEach(function (el, i) {
+      setTimeout(function () {
+        revealElement(el);
+      }, 200 + i * 100);
     });
   }
 
-  /* --- イラストフロート --- */
-  const floatElements = document.querySelectorAll('.illust-float');
-
   if (prefersReducedMotion) {
-    floatElements.forEach(function (el) { el.classList.add('is-visible'); });
-  } else if (floatElements.length > 0) {
-    const floatObserver = new IntersectionObserver(
+    animateElements.forEach(revealElement);
+    document.querySelectorAll('[data-hero-animate]').forEach(revealElement);
+  } else {
+    const scrollObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            floatObserver.unobserve(entry.target);
+            revealElement(entry.target);
+            scrollObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     );
-    floatElements.forEach(function (el) { floatObserver.observe(el); });
+
+    animateElements.forEach(function (el) {
+      if (!el.hasAttribute('data-hero-animate')) {
+        scrollObserver.observe(el);
+      }
+    });
+
+    if (document.querySelectorAll('[data-hero-animate]').length > 0) {
+      requestAnimationFrame(revealHero);
+    }
+  }
+
+  /* --- イラストフロート（入場完了後に開始） --- */
+  const floatElements = document.querySelectorAll('.illust-float');
+
+  function startFloatWhenVisible(el) {
+    if (el.classList.contains('is-visible')) {
+      el.classList.add('is-floating');
+      return;
+    }
+    const waitObserver = new MutationObserver(function () {
+      if (el.classList.contains('is-visible')) {
+        el.classList.add('is-floating');
+        waitObserver.disconnect();
+      }
+    });
+    waitObserver.observe(el, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  if (prefersReducedMotion) {
+    floatElements.forEach(function (el) {
+      revealElement(el);
+      el.classList.add('is-floating');
+    });
+  } else if (floatElements.length > 0) {
+    floatElements.forEach(startFloatWhenVisible);
   }
 
   /* --- Hero パララックス --- */
-  const heroImageWrap = document.querySelector('.hero__image-wrap');
+  const heroParallaxLayer = document.querySelector('.hero__parallax-layer');
 
-  if (heroImageWrap && !prefersReducedMotion && !isMobile) {
+  if (heroParallaxLayer && !prefersReducedMotion && !isMobile) {
     window.addEventListener('scroll', function () {
       const offset = Math.min(window.scrollY * 0.04, 24);
-      heroImageWrap.style.transform = 'translateY(' + offset + 'px)';
+      heroParallaxLayer.style.transform = 'translateY(' + offset + 'px)';
     }, { passive: true });
   }
 
@@ -156,60 +187,6 @@
         card.style.setProperty('--glow-x', x + '%');
         card.style.setProperty('--glow-y', y + '%');
       });
-    });
-  }
-
-  /* --- パーティクル（軽量） --- */
-  const canvas = document.querySelector('.particle-canvas');
-
-  if (canvas && !prefersReducedMotion && !isMobile) {
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let w, h;
-
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-
-    function initParticles() {
-      particles = [];
-      const count = Math.min(25, Math.floor(w / 60));
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          r: Math.random() * 2 + 0.5,
-          dx: (Math.random() - 0.5) * 0.3,
-          dy: (Math.random() - 0.5) * 0.3,
-          o: Math.random() * 0.3 + 0.1
-        });
-      }
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach(function (p) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(232, 93, 36, ' + p.o + ')';
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0) p.x = w;
-        if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h;
-        if (p.y > h) p.y = 0;
-      });
-      requestAnimationFrame(draw);
-    }
-
-    resize();
-    initParticles();
-    draw();
-    window.addEventListener('resize', function () {
-      resize();
-      initParticles();
     });
   }
 
@@ -427,14 +404,4 @@
     });
   }
 
-  /* --- トップ: 初回表示でスタッガー要素を表示 --- */
-  document.querySelectorAll('.hero__content .fade-in').forEach(function (el) {
-    if (!prefersReducedMotion) {
-      setTimeout(function () {
-        el.classList.add('is-visible');
-      }, 100);
-    } else {
-      el.classList.add('is-visible');
-    }
-  });
 })();
