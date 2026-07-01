@@ -18,13 +18,29 @@
 
   /* --- 固定ヘッダー --- */
   const header = document.querySelector('.header');
+  const sectionNav = document.querySelector('[data-section-nav]');
+  let scrollRafPending = false;
+  let updateSectionNavFn = null;
 
   function handleScroll() {
-    if (!header) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 10);
+    if (header) {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    }
+    if (updateSectionNavFn) {
+      updateSectionNavFn();
+    }
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  function onScroll() {
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function () {
+      handleScroll();
+      scrollRafPending = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
   handleScroll();
 
   /* --- モバイルナビ --- */
@@ -625,7 +641,6 @@
   }
 
   /* --- サブページ: セクションナビ scroll spy --- */
-  const sectionNav = document.querySelector('[data-section-nav]');
   if (sectionNav) {
     const navLinks = sectionNav.querySelectorAll('[data-section-link]');
     const sectionIds = Array.from(navLinks).map(function (link) {
@@ -635,7 +650,7 @@
       return document.getElementById(id);
     }).filter(Boolean);
 
-    function updateSectionNav() {
+    updateSectionNavFn = function updateSectionNav() {
       let activeId = sectionIds[0];
       const offset = (header ? header.offsetHeight : 0) + 80;
 
@@ -650,10 +665,9 @@
         const isActive = link.getAttribute('data-section-link') === activeId;
         link.classList.toggle('is-active', isActive);
       });
-    }
+    };
 
-    window.addEventListener('scroll', updateSectionNav, { passive: true });
-    updateSectionNav();
+    updateSectionNavFn();
   }
 
 })();

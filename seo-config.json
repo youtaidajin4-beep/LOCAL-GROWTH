@@ -1,0 +1,23 @@
+{
+  "siteUrl": "https://local-growth.vercel.app",
+  "siteName": "株式会社LOCAL GROWTH",
+  "defaultOgImage": "/assets/images/og-share.png",
+  "locale": "ja_JP",
+  "organization": {
+    "name": "株式会社LOCAL GROWTH",
+    "alternateName": "LOCAL GROWTH",
+    "email": "youtaidajin4@gmail.com",
+    "telephone": "+81-70-2410-0358",
+    "address": {
+      "streetAddress": "三景台町1−27",
+      "addressLocality": "長崎市",
+      "addressRegion": "長崎県",
+      "postalCode": "850-0824",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "latitude": 32.7589,
+      "longitude": 129.8737
+    }
+  }
+}
