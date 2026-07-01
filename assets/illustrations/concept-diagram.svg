@@ -1,25 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" aria-hidden="true">
-  <rect width="400" height="280" rx="8" fill="#FFF7F2" stroke="#F0E4DC" stroke-width="1"/>
-  <!-- HP box -->
-  <rect x="32" y="100" width="100" height="72" rx="6" fill="#fff" stroke="#E85D24" stroke-width="1.5"/>
-  <text x="44" y="132" font-family="sans-serif" font-size="11" font-weight="600" fill="#E85D24">HP??</text>
-  <rect x="44" y="142" width="56" height="4" rx="1" fill="#E85D24" fill-opacity="0.12"/>
-  <rect x="44" y="152" width="76" height="4" rx="1" fill="#E85D24" fill-opacity="0.08"/>
-  <!-- AI box -->
-  <rect x="268" y="100" width="100" height="72" rx="6" fill="#fff" stroke="#E85D24" stroke-width="1.5"/>
-  <text x="288" y="132" font-family="sans-serif" font-size="11" font-weight="600" fill="#E85D24">AI??</text>
-  <circle cx="318" cy="152" r="10" stroke="#E85D24" stroke-width="1.2" fill="#E85D24" fill-opacity="0.06"/>
-  <circle cx="318" cy="152" r="4" fill="#E85D24" fill-opacity="0.2"/>
-  <!-- Center growth -->
-  <circle cx="200" cy="136" r="44" fill="#E85D24" fill-opacity="0.06" stroke="#E85D24" stroke-width="1.5"/>
-  <text x="184" y="132" font-family="sans-serif" font-size="13" font-weight="600" fill="#E85D24">??</text>
-  <path d="M188 148 L200 128 L212 148" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Arrows -->
-  <path d="M132 136 H152" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M148 132 L156 136 L148 140" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M248 136 H268" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M264 132 L272 136 L264 140" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Bottom labels -->
-  <rect x="60" y="210" width="280" height="40" rx="4" fill="#fff" stroke="#F0E4DC" stroke-width="1"/>
-  <text x="108" y="236" font-family="sans-serif" font-size="11" fill="#5C5C5C">???????????????</text>
+  <defs>
+    <linearGradient id="cd-bg" x1="0" y1="0" x2="400" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFEDE4"/>
+      <stop offset="50%" stop-color="#FFF7F2"/>
+      <stop offset="100%" stop-color="#EEF6FC"/>
+    </linearGradient>
+    <linearGradient id="cd-web" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E85D24"/>
+      <stop offset="100%" stop-color="#FF7A45"/>
+    </linearGradient>
+    <linearGradient id="cd-ai" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A9D8F"/>
+      <stop offset="100%" stop-color="#4A90D9"/>
+    </linearGradient>
+    <linearGradient id="cd-growth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#E85D24" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FF8C42" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="cd-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1B2A3D" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="280" rx="12" fill="url(#cd-bg)"/>
+
+  <!-- WEB card -->
+  <g filter="url(#cd-shadow)">
+    <rect x="28" y="72" width="96" height="96" rx="10" fill="#fff" stroke="url(#cd-web)" stroke-width="2"/>
+    <rect x="40" y="86" width="40" height="6" rx="1.5" fill="#E85D24" fill-opacity="0.25"/>
+    <rect x="40" y="98" width="56" height="3" rx="1" fill="#E85D24" fill-opacity="0.12"/>
+    <rect x="40" y="106" width="48" height="3" rx="1" fill="#F3F4F6"/>
+    <rect x="40" y="114" width="40" height="3" rx="1" fill="#F3F4F6"/>
+    <text x="76" y="152" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#E85D24" letter-spacing="0.1em">WEB</text>
+  </g>
+
+  <!-- Arrow WEB → GROWTH -->
+  <line x1="128" y1="120" x2="148" y2="120" stroke="#E85D24" stroke-width="4" stroke-linecap="round"/>
+  <path d="M144 114 L154 120 L144 126" fill="#E85D24"/>
+
+  <!-- GROWTH hub -->
+  <g filter="url(#cd-shadow)">
+    <circle cx="200" cy="120" r="52" fill="url(#cd-growth)" stroke="#E85D24" stroke-width="2.5"/>
+    <path d="M192 128 L200 96 L208 128" stroke="#E85D24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M196 112 L200 102 L204 112" stroke="#FF8C42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="200" y="148" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#E85D24" letter-spacing="0.12em">GROWTH</text>
+  </g>
+
+  <!-- Arrow AI → GROWTH -->
+  <line x1="272" y1="120" x2="252" y2="120" stroke="#2A9D8F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M256 114 L246 120 L256 126" fill="#2A9D8F"/>
+
+  <!-- AI card -->
+  <g filter="url(#cd-shadow)">
+    <rect x="276" y="72" width="96" height="96" rx="10" fill="#fff" stroke="url(#cd-ai)" stroke-width="2"/>
+    <circle cx="324" cy="108" r="14" fill="#4A90D9" fill-opacity="0.1" stroke="#4A90D9" stroke-width="1.5"/>
+    <circle cx="324" cy="108" r="5" fill="#2A9D8F" fill-opacity="0.35"/>
+    <line x1="324" y1="94" x2="324" y2="86" stroke="#4A90D9" stroke-width="1.5"/>
+    <line x1="324" y1="122" x2="324" y2="130" stroke="#4A90D9" stroke-width="1.5"/>
+    <line x1="310" y1="108" x2="302" y2="108" stroke="#4A90D9" stroke-width="1.5"/>
+    <line x1="338" y1="108" x2="346" y2="108" stroke="#4A90D9" stroke-width="1.5"/>
+    <text x="324" y="152" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#2A9D8F" letter-spacing="0.1em">AI</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="200" y="228" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#6B7280" letter-spacing="0.08em">WEB + AI = GROWTH</text>
+  <line x1="120" y1="248" x2="280" y2="248" stroke="#F0E4DC" stroke-width="1"/>
+  <text x="200" y="266" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="9" font-weight="500" fill="#9CA3AF" letter-spacing="0.06em">2 AXES · 1 GROWTH</text>
 </svg>

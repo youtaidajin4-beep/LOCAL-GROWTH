@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="se-bg" x1="0" y1="0" x2="320" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF0E8"/>
+      <stop offset="100%" stop-color="#FFF7F2"/>
+    </linearGradient>
+    <radialGradient id="se-blob" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(60 40) rotate(90) scale(45)">
+      <stop stop-color="#F4A261" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#F4A261" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="se-btn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF8A4C"/>
+      <stop offset="100%" stop-color="#E85D24"/>
+    </linearGradient>
+    <filter id="se-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#E85D24" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="320" height="160" fill="url(#se-bg)"/>
+  <circle cx="60" cy="40" r="45" fill="url(#se-blob)"/>
+  <circle cx="290" cy="140" r="35" fill="#E85D24" fill-opacity="0.08"/>
+  <!-- Customer profile -->
+  <g filter="url(#se-shadow)">
+    <rect x="20" y="40" width="76" height="80" rx="8" fill="#fff" stroke="#F0E4DC" stroke-width="1"/>
+    <circle cx="58" cy="68" r="16" fill="url(#se-btn)" fill-opacity="0.15" stroke="#E85D24" stroke-width="1.2"/>
+    <circle cx="58" cy="64" r="7" fill="#E85D24" fill-opacity="0.3"/>
+    <path d="M44 88 Q58 78 72 88" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round"/>
+    <rect x="36" y="96" width="44" height="4" rx="1" fill="#E85D24" fill-opacity="0.15"/>
+    <rect x="36" y="106" width="32" height="3" rx="1" fill="#F3F4F6"/>
+  </g>
+  <!-- Connector -->
+  <path d="M108 80 Q124 60 140 80" stroke="#E85D24" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="124" cy="68" r="10" fill="#E85D24" fill-opacity="0.1" stroke="#E85D24" stroke-width="1"/>
+  <path d="M120 68 L124 72 L130 64" stroke="#E85D24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Email draft -->
+  <g filter="url(#se-shadow)">
+    <rect x="140" y="20" width="164" height="120" rx="8" fill="#fff" stroke="#F0E4DC" stroke-width="1"/>
+    <rect x="140" y="20" width="164" height="24" rx="8" fill="#FAFAFA"/>
+    <rect x="140" y="36" width="164" height="8" fill="#FAFAFA"/>
+    <circle cx="156" cy="32" r="3" fill="#E85D24" fill-opacity="0.4"/>
+    <circle cx="166" cy="32" r="3" fill="#FF8C42" fill-opacity="0.3"/>
+    <circle cx="176" cy="32" r="3" fill="#F4A261" fill-opacity="0.3"/>
+    <rect x="152" y="52" width="56" height="6" rx="2" fill="#E85D24" fill-opacity="0.2"/>
+    <line x1="152" y1="68" x2="292" y2="68" stroke="#F0E4DC" stroke-width="1"/>
+    <rect x="152" y="76" width="108" height="4" rx="1" fill="#E85D24" fill-opacity="0.18"/>
+    <rect x="152" y="88" width="120" height="4" rx="1" fill="#F3F4F6"/>
+    <rect x="152" y="100" width="88" height="4" rx="1" fill="#F3F4F6"/>
+    <rect x="152" y="116" width="64" height="16" rx="4" fill="url(#se-btn)"/>
+    <rect x="164" y="122" width="40" height="4" rx="1" fill="#fff" fill-opacity="0.9"/>
+  </g>
+</svg>

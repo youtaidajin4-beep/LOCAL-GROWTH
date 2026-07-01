@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="株式会社LOCAL GROWTHは長崎を拠点に、ホームページ制作とAI支援導入を通じて企業の成長を後押しします。長崎でLP制作・AI支援といえば、私たちにお任せください。">
+  <meta name="description" content="株式会社LOCAL GROWTHは長崎を拠点に、ホームページ制作とAI支援導入を通じて企業の成長を後押しします。地方の成長を、WebとAIで支えるパートナーです。">
   <title>株式会社LOCAL GROWTH | 長崎のWeb制作・AI支援</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-enter">
@@ -38,35 +38,107 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero hero--top hero--impact" aria-labelledby="hero-heading">
-      <div class="hero__backdrop" aria-hidden="true">
-        <img src="assets/images/hero-main.png" alt="" class="hero__backdrop-img hero__parallax-layer" width="1920" height="1080" loading="eager">
-        <div class="hero__backdrop-fade"></div>
-      </div>
-      <div class="hero__arc" aria-hidden="true"></div>
-      <div class="hero__arc hero__arc--secondary" aria-hidden="true"></div>
-      <div class="container hero__inner hero__inner--impact">
-        <div class="hero__content">
-          <p class="hero__eyebrow animate-on-scroll givery-slide" data-hero-animate>LOCAL GROWTH · NAGASAKI</p>
-          <h1 class="hero__headline headline-split" id="hero-heading">
-            <span class="hero__headline-line animate-on-scroll givery-slide" data-hero-animate>GROWTH</span>
-            <span class="hero__headline-line hero__headline-line--sub animate-on-scroll givery-slide" data-hero-animate>for Nagasaki</span>
-          </h1>
-          <p class="hero__headline-jp animate-on-scroll givery-slide" data-hero-animate>長崎の企業に、世界水準のWebとAIを。</p>
-          <p class="section__label text-band animate-on-scroll givery-slide" data-hero-animate>
-            <span class="text-band__inner">地方の成長を、WebとAIで支える。</span>
-          </p>
-          <p class="hero__lead animate-on-scroll givery-fade-up" data-hero-animate>
-            ホームページ制作とAI支援導入を通じて、長崎の企業の成長を静かに、強く後押しします。
-          </p>
-          <div class="hero__actions animate-on-scroll givery-fade-up" data-hero-animate>
-            <a href="#service" class="btn btn--primary">サービスを見る</a>
-            <a href="/contact" class="btn btn--outline">お問い合わせ</a>
+    <section class="hero hero--top hero--impact hero--phased" data-hero-phased data-hero-cycle data-cycle-interval="6000" aria-labelledby="hero-heading">
+      <div class="hero__stage">
+          <!-- Phase 1: Brand -->
+          <div class="hero__phase hero__phase--brand hero__phase--active" data-phase="1">
+            <div class="hero__phase-scene">
+              <div class="hero__phase-backdrop hero__phase-backdrop--brand" aria-hidden="true">
+                <img src="assets/images/hero-main.png" alt="" class="hero__backdrop-img hero__parallax-layer" width="1920" height="1080" loading="eager">
+                <div class="hero__backdrop-fade"></div>
+              </div>
+              <div class="hero__ambient" aria-hidden="true">
+                <div class="hero__ambient-mesh"></div>
+                <div class="hero__ambient-grid"></div>
+                <div class="hero__orb hero__orb--1"></div>
+                <div class="hero__orb hero__orb--2"></div>
+                <div class="hero__orb hero__orb--3"></div>
+              </div>
+              <div class="hero__arc" aria-hidden="true"></div>
+              <div class="hero__arc hero__arc--secondary" aria-hidden="true"></div>
+              <div class="container hero__inner hero__inner--impact">
+                <div class="hero__content">
+                  <p class="hero__eyebrow" data-phase-item data-delay="0">LOCAL GROWTH · NAGASAKI</p>
+                  <div class="hero__chips" aria-hidden="true">
+                    <span class="hero__chip hero__chip--web">WEB</span>
+                    <span class="hero__chip hero__chip--ai">AI</span>
+                    <span class="hero__chip hero__chip--growth">GROWTH</span>
+                  </div>
+                  <h1 class="hero__headline headline-split" id="hero-heading">
+                    <span class="hero__headline-line" data-phase-item data-delay="150">GROWTH</span>
+                    <span class="hero__headline-line hero__headline-line--sub" data-phase-item data-delay="300">for Nagasaki</span>
+                  </h1>
+                  <p class="section__label text-band text-band--hero" data-phase-item data-delay="450">
+                    <span class="text-band__inner">地方の成長を、WebとAIで支える。</span>
+                  </p>
+                  <p class="hero__lead text-balance" data-phase-item data-delay="600">
+                    ホームページ制作とAI支援導入を通じて、<br class="sp-only">長崎の企業の成長を静かに、強く後押しします。
+                  </p>
+                  <div class="hero__actions" data-phase-item data-delay="750">
+                    <a href="#service" class="btn btn--primary">サービスを見る</a>
+                    <a href="/contact" class="btn btn--outline">お問い合わせ</a>
+                  </div>
+                  <button type="button" class="hero__scroll-hint" data-phase-item data-delay="900" data-scroll-target="#service" aria-label="サービスセクションへスクロール">
+                    <span>Scroll</span>
+                    <span class="hero__scroll-hint__icon" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <button type="button" class="hero__scroll-hint animate-on-scroll givery-fade-up" data-hero-animate data-scroll-target="#service" aria-label="サービスセクションへスクロール">
-            <span>Scroll</span>
-            <span class="hero__scroll-hint__icon" aria-hidden="true"></span>
-          </button>
+
+          <!-- Phase 2: AI Statement -->
+          <div class="hero__phase hero__phase--statement" data-phase="2">
+            <div class="hero__phase-scene">
+              <div class="hero__phase-backdrop hero__phase-backdrop--statement" aria-hidden="true">
+                <div class="hero__phase-backdrop-gradient"></div>
+                <div class="hero__phase-glow"></div>
+              </div>
+              <div class="hero__ambient" aria-hidden="true">
+                <div class="hero__ambient-mesh"></div>
+                <div class="hero__ambient-grid"></div>
+                <div class="hero__orb hero__orb--1"></div>
+                <div class="hero__orb hero__orb--2"></div>
+                <div class="hero__orb hero__orb--3"></div>
+              </div>
+              <div class="hero__phase-accent" aria-hidden="true"></div>
+              <div class="container hero__inner hero__inner--phased">
+                <div class="hero__content">
+                  <p class="hero__eyebrow hero__eyebrow--statement" data-phase-item data-delay="0">STATEMENT</p>
+                  <p class="section__label text-band hero__text-band--statement" data-phase-item data-delay="100">
+                    <span class="text-band__inner">自社で、どう使うか。</span>
+                  </p>
+                  <p class="hero__phase-copy">
+                    <span class="hero-line" data-phase-item data-delay="200">
+                      <span class="accent-orange">AI</span>がすごいのは
+                    </span>
+                    <span class="hero-line" data-phase-item data-delay="400">わかった。</span>
+                    <span class="hero-line" data-phase-item data-delay="600">
+                      <span class="accent-navy">問題</span>は、
+                    </span>
+                    <span class="hero-line hero-line-main" data-phase-item data-delay="800">
+                      <span class="hero-line-main__text">自社でどう使うか。</span>
+                    </span>
+                  </p>
+                  <div class="hero__statement-accent" aria-hidden="true"></div>
+                  <p class="hero__subcopy hero__subcopy--phase" data-phase-item data-delay="1000">
+                    AIを&ldquo;知っている&rdquo;だけで終わらせず、企業の実務に使える形まで整理し、導入・運用を支援します。
+                  </p>
+                  <div class="hero__statement-deco" aria-hidden="true">
+                    <span class="hero__statement-tag">AI × 実務</span>
+                    <span class="hero__statement-tag hero__statement-tag--cool">導入 → 定着</span>
+                  </div>
+                  <div class="hero__actions hero__actions--phase" data-phase-item data-delay="1150">
+                    <a href="/contact?type=ai" class="btn btn--primary btn--lg">AI活用を相談する</a>
+                    <a href="#service" class="btn btn--outline btn--outline-accent">サービスを見る</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="hero__phase-indicator" aria-hidden="true">
+          <span class="hero__phase-dot hero__phase-dot--active" data-phase-dot="1"></span>
+          <span class="hero__phase-dot" data-phase-dot="2"></span>
         </div>
       </div>
     </section>
@@ -119,137 +191,239 @@
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="section section--alt section--fade-top" aria-label="実績指標">
-      <div class="container">
-        <div class="stat-strip animate-on-scroll givery-fade-up">
-          <div class="stat-strip__item">
-            <span class="stat-strip__value" data-count="0.9" data-count-decimals="1" data-count-suffix="s">0</span>
-            <span class="stat-strip__label">LCP（制作デモ）</span>
-          </div>
-          <div class="stat-strip__item">
-            <span class="stat-strip__value" data-count="90" data-count-prefix="-" data-count-suffix="%">0</span>
-            <span class="stat-strip__label">作業時間削減（AIデモ）</span>
-          </div>
-          <div class="stat-strip__item">
-            <span class="stat-strip__value" data-count="95" data-count-suffix="+">0</span>
-            <span class="stat-strip__label">SEO基盤スコア</span>
-          </div>
-          <div class="stat-strip__item">
-            <span class="stat-strip__value">長崎</span>
-            <span class="stat-strip__label">対面 / オンライン全国</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section section--impact" id="projects" aria-labelledby="projects-heading">
+    <!-- Use Cases -->
+    <section class="section section--impact use-case-section" id="use-cases" aria-labelledby="use-cases-heading">
       <div class="section--impact__backdrop" aria-hidden="true">
-        <img src="assets/images/service-web.png" alt="" class="section--impact__backdrop-img" width="1920" height="1080" loading="lazy">
+        <img src="assets/images/service-ai.png" alt="" class="section--impact__backdrop-img" width="1920" height="1080" loading="lazy">
         <div class="section--impact__backdrop-fade"></div>
       </div>
       <div class="container">
         <div class="section__header animate-on-scroll givery-slide">
-          <h2 class="section__title-en" id="projects-heading">PROJECTS</h2>
-          <p class="section__label text-band"><span class="text-band__inner">長崎から、届けるクオリティ。</span></p>
+          <h2 class="section__title-en" id="use-cases-heading">USE CASES</h2>
+          <p class="section__label text-band"><span class="text-band__inner">こんな使い方が想定できます。</span></p>
         </div>
-        <div class="projects-grid stagger-parent">
-          <article class="works-placeholder-card stagger-item animate-on-scroll givery-fade-up" data-case="1">
-            <div class="works-placeholder-card__thumb" aria-hidden="true"></div>
-            <div class="works-placeholder-card__body">
-              <p class="works-placeholder-card__tag">製造業</p>
-              <h3 class="works-placeholder-card__title">導入事例（準備中）</h3>
-              <p class="works-placeholder-card__desc">ロゴ・概要・成果指標を後から差し替え可能です。</p>
+        <div class="use-case-scroll-wrap">
+          <p class="use-case-scroll-hint sp-only" aria-hidden="true">← スワイプで見る →</p>
+          <div class="use-case-grid use-case-grid--carousel stagger-parent">
+          <article class="use-case-card use-case-card--static stagger-item animate-on-scroll givery-fade-up">
+            <span class="use-case-card__tag">AI · 全業種</span>
+            <div class="use-case-card__illust">
+              <img src="assets/illustrations/use-cases/meeting-summary.svg" alt="" width="320" height="160" loading="lazy">
             </div>
+            <h3 class="use-case-card__title">議事録・報告書の要約</h3>
+            <p class="use-case-card__desc">長い会議録を要点だけに整理。アクション項目も自動抽出。</p>
+            <span class="use-case-card__metric">想定: 作業時間 -90%</span>
           </article>
-          <article class="works-placeholder-card stagger-item animate-on-scroll givery-fade-up" data-case="2">
-            <div class="works-placeholder-card__thumb" aria-hidden="true"></div>
-            <div class="works-placeholder-card__body">
-              <p class="works-placeholder-card__tag">サービス業</p>
-              <h3 class="works-placeholder-card__title">導入事例（準備中）</h3>
-              <p class="works-placeholder-card__desc">ロゴ・概要・成果指標を後から差し替え可能です。</p>
+          <article class="use-case-card use-case-card--static stagger-item animate-on-scroll givery-fade-up">
+            <span class="use-case-card__tag">AI · 営業</span>
+            <div class="use-case-card__illust">
+              <img src="assets/illustrations/use-cases/sales-email.svg" alt="" width="320" height="160" loading="lazy">
             </div>
+            <h3 class="use-case-card__title">営業メール・提案書ドラフト</h3>
+            <p class="use-case-card__desc">顧客情報から提案メールのたたき台を生成。修正するだけで送れる。</p>
+            <span class="use-case-card__metric">想定: 作成時間 -80%</span>
           </article>
-          <article class="works-placeholder-card stagger-item animate-on-scroll givery-fade-up" data-case="3">
-            <div class="works-placeholder-card__thumb" aria-hidden="true"></div>
-            <div class="works-placeholder-card__body">
-              <p class="works-placeholder-card__tag">小売・飲食</p>
-              <h3 class="works-placeholder-card__title">導入事例（準備中）</h3>
-              <p class="works-placeholder-card__desc">ロゴ・概要・成果指標を後から差し替え可能です。</p>
+          <article class="use-case-card use-case-card--static stagger-item animate-on-scroll givery-fade-up">
+            <span class="use-case-card__tag">AI · バックオフィス</span>
+            <div class="use-case-card__illust">
+              <img src="assets/illustrations/use-cases/knowledge-search.svg" alt="" width="320" height="160" loading="lazy">
             </div>
+            <h3 class="use-case-card__title">社内ナレッジの即時検索</h3>
+            <p class="use-case-card__desc">マニュアルや過去資料をAIが理解。質問すればすぐ答えが返る。</p>
+            <span class="use-case-card__metric">想定: 検索 即時化</span>
+          </article>
+          <article class="use-case-card use-case-card--static stagger-item animate-on-scroll givery-fade-up">
+            <span class="use-case-card__tag">AI · 現場</span>
+            <div class="use-case-card__illust">
+              <img src="assets/illustrations/use-cases/daily-report.svg" alt="" width="320" height="160" loading="lazy">
+            </div>
+            <h3 class="use-case-card__title">日報・定型業務の自動化</h3>
+            <p class="use-case-card__desc">箇条書きメモから整形された日報へ。毎日のルーティンを軽くする。</p>
+            <span class="use-case-card__metric">想定: 日報作成 -85%</span>
+          </article>
+          <article class="use-case-card use-case-card--static stagger-item animate-on-scroll givery-fade-up">
+            <span class="use-case-card__tag">WEB · 全業種</span>
+            <div class="use-case-card__illust">
+              <img src="assets/illustrations/use-cases/corporate-hp.svg" alt="" width="320" height="160" loading="lazy">
+            </div>
+            <h3 class="use-case-card__title">コーポレートHPの刷新</h3>
+            <p class="use-case-card__desc">信頼感のあるデザインと、問い合わせまでの導線を設計。</p>
+            <span class="use-case-card__metric">想定: 問い合わせ導線強化</span>
+          </article>
+          <article class="use-case-card use-case-card--static stagger-item animate-on-scroll givery-fade-up">
+            <span class="use-case-card__tag">WEB · サービス業</span>
+            <div class="use-case-card__illust">
+              <img src="assets/illustrations/use-cases/contact-flow.svg" alt="" width="320" height="160" loading="lazy">
+            </div>
+            <h3 class="use-case-card__title">問い合わせ導線の改善</h3>
+            <p class="use-case-card__desc">訪問者を迷わせず、相談・予約まで一本道で誘導する設計。</p>
+            <span class="use-case-card__metric">想定: コンバージョン向上</span>
           </article>
         </div>
-        <div class="projects-grid projects-grid--demos stagger-parent">
-          <a href="/service-hp#works" class="works-demo-card stagger-item animate-on-scroll givery-fade-up">
-            <div class="works-demo-card__img">
-              <img src="assets/images/service-web.png" alt="" width="600" height="400" loading="lazy">
-            </div>
-            <div class="works-demo-card__body">
-              <p class="works-demo-card__label">DEMO · WEB</p>
-              <h3 class="works-demo-card__title">NEXUS GROWTH 制作デモ</h3>
-              <span class="works-demo-card__arrow">デモを見る →</span>
-            </div>
-          </a>
-          <a href="/service-ai#works" class="works-demo-card stagger-item animate-on-scroll givery-fade-up">
-            <div class="works-demo-card__img">
-              <img src="assets/images/service-ai.png" alt="" width="600" height="400" loading="lazy">
-            </div>
-            <div class="works-demo-card__body">
-              <p class="works-demo-card__label">DEMO · AI</p>
-              <h3 class="works-demo-card__title">AI Lab ユースケースデモ</h3>
-              <span class="works-demo-card__arrow">デモを見る →</span>
-            </div>
+        </div>
+        <div class="use-case-closer animate-on-scroll givery-fade-up">
+          <p class="use-case-closer__eyebrow">BEYOND EXAMPLES</p>
+          <h3 class="use-case-closer__title">
+            ここにあるのは、<em class="text-gradient">ほんの一例</em>。
+          </h3>
+          <p class="use-case-closer__lead">
+            御社の業務・課題に合わせた AI エージェントを、ゼロから設計・構築します。<br>
+            業種・規模を問わず、導入前のヒアリングから伴走します。
+          </p>
+          <a href="/contact?type=ai" class="btn btn--primary btn--lg use-case-closer__cta">
+            御社の AI を相談する
           </a>
         </div>
       </div>
     </section>
 
     <!-- Solution -->
-    <section class="section section--alt section--fade-top section--decor" aria-labelledby="solution-heading">
+    <section class="section solution-showcase section--impact" aria-labelledby="solution-heading">
+      <div class="section--impact__backdrop" aria-hidden="true">
+        <div class="solution-showcase__glow"></div>
+        <div class="section--impact__backdrop-fade solution-showcase__fade"></div>
+      </div>
       <div class="container">
         <div class="section__header animate-on-scroll givery-slide">
           <h2 class="section__title-en" id="solution-heading">SOLUTION</h2>
-          <p class="section__label text-band"><span class="text-band__inner">WebとAIを、ひとつの成長戦略に。</span></p>
+          <p class="section__label text-band"><span class="text-band__inner">見せる力と、回す仕組み。どちらも設計する。</span></p>
         </div>
-        <div class="solution-block animate-on-scroll givery-fade-up">
-          <p class="solution-block__lead">
-            長崎の企業が抱える「集客の顔が弱い」「現場が忙しくてAIが定着しない」——その両方に、設計から伴走まで一貫して向き合います。
+        <div class="solution-showcase__lead animate-on-scroll givery-fade-up">
+          <p class="solution-showcase__catch">
+            <span class="solution-showcase__catch-line text-balance"><em class="text-gradient">届ける</em>顔と、<br class="sp-only"><em class="text-gradient text-gradient--cool">回す</em>現場。</span>
+            <span class="solution-showcase__catch-sub">WebとAIを、一本の成長戦略に。</span>
           </p>
-          <div class="solution-block__grid">
-            <div class="solution-block__item">
-              <p class="solution-block__item-title">WEB</p>
-              <p class="solution-block__item-desc">見た目だけで終わらない。導線・信頼・更新のしやすさまで設計したホームページを制作します。</p>
+        </div>
+        <div class="solution-showcase__grid stagger-parent">
+          <article class="solution-showcase__card stagger-item animate-on-scroll givery-fade-up">
+            <div class="solution-showcase__card-media solution-showcase__card-media--web">
+              <img src="assets/images/solution-web-workspace.png" alt="Web制作・UI/UX設計のワークスペースイメージ" width="600" height="338" loading="lazy">
+              <img class="solution-showcase__card-badge" src="assets/illustrations/service-web.svg" alt="" width="72" height="40" loading="lazy">
             </div>
-            <div class="solution-block__item">
-              <p class="solution-block__item-title">AI</p>
-              <p class="solution-block__item-desc">ツール導入で終わらせない。議事録・営業・ナレッジなど、現場で使える形に落とし込みます。</p>
+            <div class="solution-showcase__card-body">
+              <span class="solution-showcase__num" aria-hidden="true">01</span>
+              <p class="solution-showcase__label">WEB</p>
+              <h3 class="solution-showcase__title">第一印象で、信頼を取りにいく。</h3>
+              <p class="solution-showcase__desc"><strong>デザインは入口にすぎない。</strong> 問い合わせまでの導線、信頼の言語化、更新し続けられる設計まで——事業の「顔」として仕上げます。</p>
             </div>
-          </div>
-          <a href="/about" class="btn btn--outline">私たちの考え方を見る →</a>
+          </article>
+          <article class="solution-showcase__card stagger-item animate-on-scroll givery-fade-up">
+            <div class="solution-showcase__card-media solution-showcase__card-media--ai">
+              <img src="assets/images/solution-ai-workspace.png" alt="AI支援・データ活用のワークスペースイメージ" width="600" height="338" loading="lazy">
+              <img class="solution-showcase__card-badge" src="assets/illustrations/service-ai.svg" alt="" width="72" height="40" loading="lazy">
+            </div>
+            <div class="solution-showcase__card-body">
+              <span class="solution-showcase__num" aria-hidden="true">02</span>
+              <p class="solution-showcase__label">AI</p>
+              <h3 class="solution-showcase__title">導入で終わらせない。定着まで設計する。</h3>
+              <p class="solution-showcase__desc"><strong>議事録・営業・ナレッジを、日常業務の一部に。</strong> ツール選定から運用定着まで、現場の手を止めない形で伴走します。</p>
+            </div>
+          </article>
+        </div>
+        <div class="solution-showcase__bar animate-on-scroll givery-fade-up">
+          <p class="solution-showcase__bar-text">戦略から実装、運用まで——<span class="solution-showcase__bar-accent text-gradient">途切れないパートナー</span>として並走します。</p>
+        </div>
+        <div class="solution-showcase__cta animate-on-scroll givery-fade-up">
+          <a href="/about" class="btn btn--primary btn--lg">考え方をもっと知る</a>
         </div>
       </div>
     </section>
 
     <!-- Concept -->
-    <section class="section section--fade-top teaser" aria-labelledby="teaser-heading-en">
-      <div class="container teaser__inner">
-        <h2 class="section__title-en animate-on-scroll givery-slide" id="teaser-heading-en">CONCEPT</h2>
-        <p class="section__label text-band animate-on-scroll givery-slide"><span class="text-band__inner">人を増やす前に、仕組みを整える。</span></p>
-        <div class="teaser__visual animate-on-scroll givery-fade-up">
-          <img src="assets/illustrations/concept-diagram.svg" alt="HP制作とAI支援の2軸で成長を支える概念図" width="480" height="320" loading="lazy">
+    <section class="section concept-showcase section--fade-top" aria-labelledby="teaser-heading-en">
+      <div class="container concept-showcase__inner">
+        <div class="concept-showcase__content">
+          <h2 class="section__title-en animate-on-scroll givery-slide" id="teaser-heading-en">CONCEPT</h2>
+          <p class="section__label text-band animate-on-scroll givery-slide"><span class="text-band__inner">人を増やす前に、土台を固める。</span></p>
+          <div class="concept-showcase__lead animate-on-scroll givery-fade-up">
+            <p class="concept-showcase__catch">
+              <span class="concept-showcase__catch-line text-balance">美しさだけのWebも、<br class="sp-only">現場に届かないAIも、意味がない。</span>
+              <span class="concept-showcase__catch-sub text-balance"><em class="text-gradient">見せ方</em>と<em class="text-gradient text-gradient--cool">回し方</em>——<br class="pc-only">その両方を、LOCAL GROWTHは設計する。</span>
+            </p>
+          </div>
+          <ul class="concept-showcase__pillars stagger-parent">
+            <li class="concept-showcase__pillar stagger-item animate-on-scroll givery-fade-up">
+              <div class="concept-showcase__pillar-icon">
+                <img src="assets/illustrations/service-web.svg" alt="" width="48" height="48" loading="lazy">
+              </div>
+              <div class="concept-showcase__pillar-body">
+                <span class="concept-showcase__pillar-num" aria-hidden="true">01</span>
+                <p class="concept-showcase__pillar-label">HP制作</p>
+                <h3 class="concept-showcase__pillar-title">事業の顔を、戦略から設計する</h3>
+                <p class="concept-showcase__pillar-desc"><strong>届けたい価値を、言葉と導線に落とす。</strong> 見た目の美しさはもちろん、問い合わせまでの体験設計まで一気通貫で。</p>
+              </div>
+            </li>
+            <li class="concept-showcase__pillar stagger-item animate-on-scroll givery-fade-up">
+              <div class="concept-showcase__pillar-icon">
+                <img src="assets/illustrations/service-ai.svg" alt="" width="48" height="48" loading="lazy">
+              </div>
+              <div class="concept-showcase__pillar-body">
+                <span class="concept-showcase__pillar-num" aria-hidden="true">02</span>
+                <p class="concept-showcase__pillar-label">AI支援導入</p>
+                <h3 class="concept-showcase__pillar-title">導入ではなく、日常に組み込む</h3>
+                <p class="concept-showcase__pillar-desc"><strong>現場の業務に溶け込む形へ。</strong> ツール選定から定着まで、使われ続ける仕組みを伴走します。</p>
+              </div>
+            </li>
+            <li class="concept-showcase__pillar concept-showcase__pillar--teal stagger-item animate-on-scroll givery-fade-up">
+              <div class="concept-showcase__pillar-icon">
+                <img src="assets/illustrations/flow-icons.svg" alt="" width="120" height="24" loading="lazy">
+              </div>
+              <div class="concept-showcase__pillar-body">
+                <span class="concept-showcase__pillar-num" aria-hidden="true">03</span>
+                <p class="concept-showcase__pillar-label">丁寧な伴走</p>
+                <h3 class="concept-showcase__pillar-title">外注ではなく、並走するパートナー</h3>
+                <p class="concept-showcase__pillar-desc"><strong>小さく始め、使いながら育てる。</strong> 納品で終わらず、変化に合わせて一緒に改善し続けます。</p>
+              </div>
+            </li>
+          </ul>
+          <a href="/about" class="btn btn--concept-about concept-showcase__link animate-on-scroll givery-fade-up">
+            <span class="btn--concept-about__pill">ABOUT</span>
+            <span class="btn--concept-about__label">会社概要はこちら</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
         </div>
-        <p class="teaser__text animate-on-scroll givery-fade-up">見た目の美しさと、現場で使える実用性。その両立が、LOCAL GROWTHの考え方です。</p>
-        <a href="/about" class="btn btn--outline teaser__link animate-on-scroll givery-fade-up">会社について詳しく見る →</a>
+        <div class="concept-showcase__visual animate-on-scroll givery-fade-up">
+          <div class="concept-showcase__visual-panel">
+            <div class="concept-showcase__visual-glow" aria-hidden="true"></div>
+            <img src="assets/illustrations/concept-diagram.svg" alt="HP制作とAI支援の2軸で成長を支える概念図" width="400" height="280" loading="lazy">
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section cta-band section--fade-top" aria-labelledby="cta-heading">
-      <div class="container cta-band__inner animate-on-scroll givery-fade-up">
-        <h2 class="cta-band__title" id="cta-heading">長崎から、全国へ。まずはお気軽にご相談ください。</h2>
-        <p class="cta-band__text">対面（長崎）・オンラインどちらも対応。現状や課題の整理から、丁寧にご一緒します。</p>
-        <a href="/contact" class="btn btn--primary btn--lg animate-on-scroll givery-fade-up animate-delay-150">無料でお問い合わせする</a>
+    <section class="section cta-band cta-band--finale section--fade-top" aria-labelledby="cta-heading">
+      <div class="cta-band__backdrop" aria-hidden="true">
+        <div class="cta-band__glow cta-band__glow--warm"></div>
+        <div class="cta-band__glow cta-band__glow--cool"></div>
+        <div class="cta-band__glow cta-band__glow--accent"></div>
+      </div>
+      <div class="container">
+        <div class="cta-band__panel cta-band__panel--vivid animate-on-scroll givery-fade-up">
+          <div class="cta-band__panel-accent" aria-hidden="true"></div>
+          <p class="cta-band__eyebrow">
+            <span class="cta-band__eyebrow-pill">CONTACT</span>
+          </p>
+          <h2 class="cta-band__title" id="cta-heading">
+            <span class="cta-band__title-line">長崎から、全国へ。</span>
+            <span class="cta-band__title-accent text-balance">まずは、<br class="sp-only"><em class="text-gradient">気軽に</em>話しましょう。</span>
+          </h2>
+          <p class="cta-band__text">対面（長崎）・オンライン、どちらでも。<strong>現状整理だけのご相談も歓迎です。</strong></p>
+          <ul class="cta-band__tags" aria-label="相談の特徴">
+            <li class="cta-band__tag">無料相談</li>
+            <li class="cta-band__tag">対面・オンライン</li>
+            <li class="cta-band__tag">ヒアリングから</li>
+          </ul>
+          <div class="cta-band__actions">
+            <div class="cta-band__btn-ring">
+              <a href="/contact" class="btn btn--primary btn--lg btn--cta-finale">
+                <span>無料で相談する</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <p class="cta-band__note">しつこい営業はしません。まずはお話を聞かせてください。</p>
+          </div>
+        </div>
       </div>
     </section>
 

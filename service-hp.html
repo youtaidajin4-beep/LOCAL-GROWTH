@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-enter page--sub">
+<body class="page-enter page--sub page--hp">
 
   <a href="#main" class="skip-link">メインコンテンツへ</a>
   <div class="mesh-bg" aria-hidden="true"></div>
@@ -50,169 +50,217 @@
             <span class="text-band__inner">見た目だけで終わらないWeb。</span>
           </p>
           <p class="page-hero__lead animate-on-scroll givery-fade-up" data-hero-animate>企業の魅力を、信頼感のあるかたちで伝えるホームページを制作します。目的・導線・更新のしやすさまで、丁寧に設計します。</p>
+          <ul class="hero__badges animate-on-scroll givery-fade-up" data-hero-animate aria-label="HP制作の特徴">
+            <li class="hero__badge">信頼設計</li>
+            <li class="hero__badge">導線設計</li>
+            <li class="hero__badge">SEO基盤</li>
+          </ul>
           <div class="hero__actions animate-on-scroll givery-fade-up" data-hero-animate>
-            <a href="#works" class="btn btn--primary btn--lg">制作デモを見る</a>
-            <a href="/contact?type=hp" class="btn btn--outline btn--lg">無料相談する</a>
+            <a href="#quality" class="btn btn--primary btn--lg">制作のこだわりを見る</a>
+            <a href="/contact?type=hp" class="btn btn--outline btn--outline-accent btn--lg">無料相談する</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt section--fade-top" aria-labelledby="benefits-heading">
+    <div class="container">
+      <nav class="page-section-nav" aria-label="ページ内ナビゲーション" data-section-nav>
+        <a href="#pain" class="page-section-nav__link is-active" data-section-link="pain">PAIN</a>
+        <a href="#future" class="page-section-nav__link" data-section-link="future">FUTURE</a>
+        <a href="#quality" class="page-section-nav__link" data-section-link="quality">QUALITY</a>
+        <a href="#scope" class="page-section-nav__link" data-section-link="scope">SCOPE</a>
+        <a href="#process" class="page-section-nav__link" data-section-link="process">PROCESS</a>
+      </nav>
+    </div>
+
+    <section class="section section--impact section--fade-top" id="pain" aria-labelledby="pain-heading">
+      <div class="section--impact__backdrop" aria-hidden="true">
+        <img src="assets/images/service-web.png" alt="" class="section--impact__backdrop-img" width="1920" height="1080" loading="lazy">
+        <div class="section--impact__backdrop-fade"></div>
+      </div>
+      <div class="container">
+        <div class="section__header animate-on-scroll givery-slide">
+          <h2 class="section__title-en" id="pain-heading">PAIN</h2>
+          <p class="section__label text-band"><span class="text-band__inner">こんな課題、ありませんか。</span></p>
+        </div>
+        <div class="hp-pain-spotlight">
+          <article class="hp-pain-card animate-on-scroll givery-fade-up">
+            <div class="hp-pain-card__head">
+              <span class="hp-pain-card__num" aria-hidden="true">01</span>
+              <h3 class="hp-pain-card__title">HPが古く、信頼感が伝わらない</h3>
+            </div>
+            <p class="hp-pain-card__desc">数年更新していないサイト。初めて訪れた方に「ちゃんとしている会社」と思ってもらえない。</p>
+          </article>
+          <article class="hp-pain-card animate-on-scroll givery-fade-up">
+            <div class="hp-pain-card__head">
+              <span class="hp-pain-card__num" aria-hidden="true">02</span>
+              <h3 class="hp-pain-card__title">問い合わせが来ない</h3>
+            </div>
+            <p class="hp-pain-card__desc">アクセスはあるのに問い合わせがゼロ。何を伝え、どこへ誘導すべきかわからない。</p>
+          </article>
+          <article class="hp-pain-card animate-on-scroll givery-fade-up">
+            <div class="hp-pain-card__head">
+              <span class="hp-pain-card__num" aria-hidden="true">03</span>
+              <h3 class="hp-pain-card__title">スマホで見づらい</h3>
+            </div>
+            <p class="hp-pain-card__desc">PC向けの古いレイアウトのまま。スマホユーザーが離脱してしまう。</p>
+          </article>
+        </div>
+        <p class="micro-cta animate-on-scroll givery-fade-up">
+          <a href="#quality" class="btn btn--outline btn--outline-accent">こんな課題、設計で解決できる →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt section--fade-top" id="future" aria-labelledby="benefits-heading">
       <div class="container">
         <div class="section__header animate-on-scroll givery-slide">
           <h2 class="section__title-en" id="benefits-heading">FUTURE</h2>
           <p class="section__label text-band"><span class="text-band__inner">こんな未来が、手に入ります。</span></p>
         </div>
-        <div class="benefit-grid stagger-parent">
-          <article class="benefit-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="benefit-card__num">01</span>
-            <h3 class="benefit-card__title">信頼感が伝わる</h3>
-            <p class="benefit-card__desc">初めて訪れた方にも「ちゃんとしている会社」と感じてもらえる、上品で清潔なデザイン。</p>
+        <div class="hp-future-bento">
+          <article class="hp-future-card hp-future-card--feature animate-on-scroll givery-fade-up">
+            <div>
+              <h3 class="hp-future-card__title">信頼感のあるデザイン</h3>
+              <p class="hp-future-card__desc">初めて訪れた方にも「ちゃんとしている会社」と感じてもらえる設計。第一印象で事業の信頼性を伝え、問い合わせのハードルを下げる。</p>
+            </div>
+            <p class="hp-future-card__metric">信頼UP</p>
           </article>
-          <article class="benefit-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="benefit-card__num">02</span>
-            <h3 class="benefit-card__title">導線がわかりやすい</h3>
-            <p class="benefit-card__desc">何を伝え、どこへ誘導するか。目的に沿った情報設計で、問い合わせにつなげます。</p>
+          <article class="hp-future-card animate-on-scroll givery-fade-up">
+            <p class="hp-future-card__metric">+240%</p>
+            <h3 class="hp-future-card__title">わかりやすい導線設計</h3>
+            <p class="hp-future-card__desc">何を伝え、どこへ誘導するか。目的に沿った情報設計で、問い合わせまで一本道に。</p>
           </article>
-          <article class="benefit-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="benefit-card__num">03</span>
-            <h3 class="benefit-card__title">更新しやすい構成</h3>
-            <p class="benefit-card__desc">作って終わりにしない。日々の更新や改善がしやすい、育てられるWebサイト。</p>
+          <article class="hp-future-card animate-on-scroll givery-fade-up">
+            <p class="hp-future-card__metric">育てる</p>
+            <h3 class="hp-future-card__title">更新しやすい構成</h3>
+            <p class="hp-future-card__desc">作って終わりにしない。日々の更新や改善がしやすい設計で、Webを成長の資産に。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt section--fade-top" aria-label="制作デモの指標">
+    <section class="section section--alt section--fade-top" aria-label="制作指標">
       <div class="container">
-        <div class="stat-strip animate-on-scroll givery-fade-up">
-          <div class="stat-strip__item">
-            <span class="stat-strip__value" data-count="0.9" data-count-decimals="1" data-count-suffix="s">0</span>
-            <span class="stat-strip__label">LCP</span>
+        <div class="hp-metrics-panel animate-on-scroll givery-fade-up">
+          <div class="hp-metrics-panel__item">
+            <span class="hp-metrics-panel__value" data-count="0.9" data-count-decimals="1" data-count-suffix="s">0</span>
+            <span class="hp-metrics-panel__label">LCP</span>
           </div>
-          <div class="stat-strip__item">
-            <span class="stat-strip__value" data-count="240" data-count-prefix="+" data-count-suffix="%">0</span>
-            <span class="stat-strip__label">CTR改善（設計目標）</span>
+          <div class="hp-metrics-panel__item">
+            <span class="hp-metrics-panel__value" data-count="240" data-count-prefix="+" data-count-suffix="%">0</span>
+            <span class="hp-metrics-panel__label">CTR改善（設計目標）</span>
           </div>
-          <div class="stat-strip__item">
-            <span class="stat-strip__value" data-count="95" data-count-suffix="+">0</span>
-            <span class="stat-strip__label">SEO基盤スコア</span>
+          <div class="hp-metrics-panel__item">
+            <span class="hp-metrics-panel__value" data-count="95" data-count-suffix="+">0</span>
+            <span class="hp-metrics-panel__label">SEO基盤スコア</span>
           </div>
-          <div class="stat-strip__item">
-            <span class="stat-strip__value">長崎</span>
-            <span class="stat-strip__label">対面ヒアリング対応</span>
+          <div class="hp-metrics-panel__item">
+            <span class="hp-metrics-panel__value">長崎</span>
+            <span class="hp-metrics-panel__label">対面ヒアリング対応</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="works" aria-labelledby="works-heading">
+    <section class="section section--impact" id="quality" aria-labelledby="quality-heading">
+      <div class="section--impact__backdrop" aria-hidden="true">
+        <img src="assets/images/solution-web-workspace.png" alt="" class="section--impact__backdrop-img" width="1920" height="1080" loading="lazy">
+        <div class="section--impact__backdrop-fade"></div>
+      </div>
       <div class="container">
         <div class="section__header animate-on-scroll givery-slide">
-          <h2 class="section__title-en" id="works-heading">WORKS</h2>
-          <p class="section__label text-band"><span class="text-band__inner">制作デモを、そのままご覧ください。</span></p>
-          <p class="works__lead">LOCAL GROWTHでは、実現できる品質と、導線・SEOまで含めた設計力を体感いただけます。</p>
+          <h2 class="section__title-en" id="quality-heading">QUALITY</h2>
+          <p class="section__label text-band"><span class="text-band__inner">制作のこだわり。</span></p>
+          <p class="works__lead">見た目・導線・SEOまで、一貫して設計します。</p>
         </div>
 
-        <div class="works__preview animate-on-scroll givery-fade-up">
-          <div class="demo-browser" data-demo-browser>
-            <div class="demo-browser__chrome">
-              <div class="demo-browser__dots" aria-hidden="true">
-                <span></span><span></span><span></span>
+        <div class="hp-quality-zigzag">
+          <article class="hp-quality-row animate-on-scroll givery-fade-up">
+            <div class="hp-quality-row__media">
+              <img src="assets/images/solution-web-workspace.png" alt="" width="640" height="400" loading="lazy">
+            </div>
+            <div class="hp-quality-row__body">
+              <div class="hp-quality-row__meta">
+                <span class="hp-quality-row__num">01</span>
+                <span class="hp-quality-row__metric">LCP 0.9s</span>
               </div>
-              <div class="demo-browser__url" aria-hidden="true">demo.localgrowth.jp/nexus-growth</div>
+              <h3 class="hp-quality-row__title">最先端デザイン</h3>
+              <p class="hp-quality-row__desc">グラデーション・アニメーション・ガラスUI。静的HTMLでもモダンな体験を実現。軽量設計で表示速度も両立。</p>
             </div>
-            <div class="demo-browser__frame">
-              <iframe
-                class="demo-browser__iframe"
-                src="demos/nexus-growth/index.html"
-                title="NEXUS GROWTH 制作デモのプレビュー"
-                loading="eager"
-                allow="fullscreen"
-                data-demo-iframe
-                data-demo-fallback="demos/nexus-growth/index.html"
-              ></iframe>
+          </article>
+          <article class="hp-quality-row hp-quality-row--reverse animate-on-scroll givery-fade-up">
+            <div class="hp-quality-row__media">
+              <img src="assets/images/service-web.png" alt="" width="640" height="400" loading="lazy">
             </div>
-            <p class="demo-browser__hint sp-only">デモ内をスクロールして体験できます。見づらい場合は下のボタンからフル画面で開いてください。</p>
-          </div>
-          <div class="works__demo-actions">
-            <a href="demos/nexus-growth/index.html" class="btn btn--primary btn--lg btn--full works__demo-open" target="_blank" rel="noopener noreferrer">フル画面でデモを体験する</a>
-          </div>
+            <div class="hp-quality-row__body">
+              <div class="hp-quality-row__meta">
+                <span class="hp-quality-row__num">02</span>
+                <span class="hp-quality-row__metric">CTR +240%</span>
+              </div>
+              <h3 class="hp-quality-row__title">導線設計</h3>
+              <p class="hp-quality-row__desc">ステッキーCTA・セクション誘導・マイクロCTAの三段構え。訪問者を迷わせず、問い合わせまで一本道で導きます。</p>
+            </div>
+          </article>
+          <article class="hp-quality-row animate-on-scroll givery-fade-up">
+            <div class="hp-quality-row__media">
+              <img src="assets/illustrations/use-cases/corporate-hp.svg" alt="" width="640" height="400" loading="lazy">
+            </div>
+            <div class="hp-quality-row__body">
+              <div class="hp-quality-row__meta">
+                <span class="hp-quality-row__num">03</span>
+                <span class="hp-quality-row__metric">基盤 95+</span>
+              </div>
+              <h3 class="hp-quality-row__title">SEO最適化</h3>
+              <p class="hp-quality-row__desc">JSON-LD構造化データ・見出し階層・meta設計。検索エンジンとユーザーの両方に最適化された基盤を構築。</p>
+            </div>
+          </article>
         </div>
 
-        <p class="animate-on-scroll givery-fade-up works__fullscreen-wrap pc-only">
-          <a href="demos/nexus-growth/index.html" class="works__fullscreen" target="_blank" rel="noopener noreferrer">
-            別タブでデモを開く →
-          </a>
+        <p class="micro-cta animate-on-scroll givery-fade-up">
+          <a href="/contact?type=hp" class="btn btn--primary btn--lg">無料相談する</a>
         </p>
-
-        <div class="benefit-grid works-metrics stagger-parent">
-          <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="benefit-card__num">01</span>
-            <h3 class="benefit-card__title">最先端デザイン</h3>
-            <span class="works-metric-card__value">LCP 0.9s</span>
-            <p class="benefit-card__desc">グラデーション・アニメーション・ガラスUI。静的HTMLでもモダンな体験を実現。軽量設計で表示速度も両立。</p>
-            <a href="demos/nexus-growth/index.html#design" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">デモのデザインを見る →</a>
-          </article>
-          <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="benefit-card__num">02</span>
-            <h3 class="benefit-card__title">導線設計</h3>
-            <span class="works-metric-card__value">CTR +240%</span>
-            <p class="benefit-card__desc">ステッキーCTA・セクション誘導・マイクロCTAの三段構え。訪問者を迷わせず、問い合わせまで一本道で導きます。</p>
-            <a href="demos/nexus-growth/index.html#funnel" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">導線マップを見る →</a>
-          </article>
-          <article class="benefit-card works-metric-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="benefit-card__num">03</span>
-            <h3 class="benefit-card__title">SEO最適化</h3>
-            <span class="works-metric-card__value">基盤 95+</span>
-            <p class="benefit-card__desc">JSON-LD構造化データ・見出し階層・meta設計。検索エンジンとユーザーの両方に最適化された基盤を構築。</p>
-            <a href="demos/nexus-growth/index.html#seo" class="works-metric-card__link" target="_blank" rel="noopener noreferrer">SEOチェックを見る →</a>
-          </article>
-        </div>
-
-        <p class="works-note animate-on-scroll givery-fade-up">※ 架空の制作デモです。数値は設計目標・デモ環境での参考値です。</p>
       </div>
     </section>
 
-    <section class="section section--alt section--fade-top" aria-labelledby="scope-heading">
+    <section class="section section--alt section--fade-top" id="scope" aria-labelledby="scope-heading">
       <div class="container">
         <div class="section__header animate-on-scroll givery-slide">
           <h2 class="section__title-en" id="scope-heading">SCOPE</h2>
           <p class="section__label text-band"><span class="text-band__inner">対応範囲</span></p>
         </div>
-        <div class="scope-cards stagger-parent">
-          <article class="scope-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="scope-card__num" aria-hidden="true">01</span>
-            <div class="scope-card__icon" aria-hidden="true">
+        <div class="hp-scope-tiles">
+          <article class="hp-scope-tile animate-on-scroll givery-fade-up">
+            <div class="hp-scope-tile__icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 10h20" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="8" r="1" fill="currentColor"/></svg>
             </div>
-            <h3 class="scope-card__title">コーポレートサイト</h3>
-            <p class="scope-card__desc">企業の顔となる信頼感のあるサイトを設計・制作します。</p>
+            <h3 class="hp-scope-tile__title">コーポレートサイト</h3>
+            <p class="hp-scope-tile__desc">企業の顔となる信頼感のあるサイトを設計・制作します。</p>
+            <span class="hp-scope-tile__metric">信頼感 UP</span>
           </article>
-          <article class="scope-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="scope-card__num" aria-hidden="true">02</span>
-            <div class="scope-card__icon" aria-hidden="true">
+          <article class="hp-scope-tile animate-on-scroll givery-fade-up">
+            <div class="hp-scope-tile__icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 22V10l8-4 8 4v12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 22v-6h6v6" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
-            <h3 class="scope-card__title">サービス紹介LP</h3>
-            <p class="scope-card__desc">訴求と導線を設計した、コンバージョン重視のLP。</p>
+            <h3 class="hp-scope-tile__title">サービス紹介LP</h3>
+            <p class="hp-scope-tile__desc">訴求と導線を設計した、コンバージョン重視のLP。</p>
+            <span class="hp-scope-tile__metric">CV 向上</span>
           </article>
-          <article class="scope-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="scope-card__num" aria-hidden="true">03</span>
-            <div class="scope-card__icon" aria-hidden="true">
+          <article class="hp-scope-tile animate-on-scroll givery-fade-up">
+            <div class="hp-scope-tile__icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M6 24c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <h3 class="scope-card__title">採用ページ</h3>
-            <p class="scope-card__desc">文化と魅力が伝わる、応募につながる採用サイト。</p>
+            <h3 class="hp-scope-tile__title">採用ページ</h3>
+            <p class="hp-scope-tile__desc">文化と魅力が伝わる、応募につながる採用サイト。</p>
+            <span class="hp-scope-tile__metric">応募率 UP</span>
           </article>
-          <article class="scope-card stagger-item animate-on-scroll givery-fade-up">
-            <span class="scope-card__num" aria-hidden="true">04</span>
-            <div class="scope-card__icon" aria-hidden="true">
+          <article class="hp-scope-tile animate-on-scroll givery-fade-up">
+            <div class="hp-scope-tile__icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="5" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="15" y="5" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="15" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="15" y="15" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
-            <h3 class="scope-card__title">事業サイト</h3>
-            <p class="scope-card__desc">事業ごとの強みを整理し、成長を支えるWeb基盤を構築。</p>
+            <h3 class="hp-scope-tile__title">事業サイト</h3>
+            <p class="hp-scope-tile__desc">事業ごとの強みを整理し、成長を支えるWeb基盤を構築。</p>
+            <span class="hp-scope-tile__metric">成長基盤</span>
           </article>
         </div>
         <ul class="scope-tags animate-on-scroll givery-fade-up" aria-label="HP作成の特徴">
@@ -225,50 +273,85 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="process-heading">
+    <section class="section" id="process" aria-labelledby="process-heading">
       <div class="container">
         <div class="section__header animate-on-scroll givery-slide">
           <h2 class="section__title-en" id="process-heading">PROCESS</h2>
           <p class="section__label text-band"><span class="text-band__inner">進め方</span></p>
         </div>
-        <ol class="process-timeline stagger-parent">
-          <li class="process-timeline__item stagger-item animate-on-scroll givery-slide">
-            <span class="process-timeline__num">01</span>
-            <div class="process-timeline__body">
-              <h3 class="process-timeline__title">お問い合わせ</h3>
-              <p class="process-timeline__desc">フォームまたはメールで、お気軽にご連絡ください。</p>
+        <ol class="hp-process-roadmap">
+          <li class="hp-process-phase animate-on-scroll givery-fade-up">
+            <div class="hp-process-phase__marker">
+              <span class="hp-process-phase__label">DISCOVER</span>
+              <span class="hp-process-phase__num">01</span>
             </div>
+            <h3 class="hp-process-phase__title">お問い合わせ</h3>
+            <p class="hp-process-phase__desc">フォームまたはメールで、お気軽にご連絡ください。</p>
+            <span class="hp-process-phase__outcome">→ 現状の課題とゴールを整理する第一歩</span>
           </li>
-          <li class="process-timeline__item stagger-item animate-on-scroll givery-slide">
-            <span class="process-timeline__num">02</span>
-            <div class="process-timeline__body">
-              <h3 class="process-timeline__title">ヒアリング</h3>
-              <p class="process-timeline__desc">目的や課題、ご希望をお伺いします。</p>
+          <li class="hp-process-phase animate-on-scroll givery-fade-up">
+            <div class="hp-process-phase__marker">
+              <span class="hp-process-phase__label">DESIGN</span>
+              <span class="hp-process-phase__num">02</span>
             </div>
+            <h3 class="hp-process-phase__title">ヒアリング</h3>
+            <p class="hp-process-phase__desc">目的や課題、ご希望をお伺いします。</p>
+            <span class="hp-process-phase__outcome">→ 伝えるべき価値と導線の方向性が明確に</span>
           </li>
-          <li class="process-timeline__item stagger-item animate-on-scroll givery-slide">
-            <span class="process-timeline__num">03</span>
-            <div class="process-timeline__body">
-              <h3 class="process-timeline__title">ご提案・制作</h3>
-              <p class="process-timeline__desc">設計のうえ、丁寧に制作を進めます。</p>
+          <li class="hp-process-phase animate-on-scroll givery-fade-up">
+            <div class="hp-process-phase__marker">
+              <span class="hp-process-phase__label">BUILD</span>
+              <span class="hp-process-phase__num">03</span>
             </div>
+            <h3 class="hp-process-phase__title">ご提案・制作</h3>
+            <p class="hp-process-phase__desc">設計のうえ、丁寧に制作を進めます。</p>
+            <span class="hp-process-phase__outcome">→ 信頼感と導線を兼ね備えたWebが完成</span>
           </li>
-          <li class="process-timeline__item stagger-item animate-on-scroll givery-slide">
-            <span class="process-timeline__num">04</span>
-            <div class="process-timeline__body">
-              <h3 class="process-timeline__title">運用・改善</h3>
-              <p class="process-timeline__desc">公開後も継続的にサポートします。</p>
+          <li class="hp-process-phase animate-on-scroll givery-fade-up">
+            <div class="hp-process-phase__marker">
+              <span class="hp-process-phase__label">GROW</span>
+              <span class="hp-process-phase__num">04</span>
             </div>
+            <h3 class="hp-process-phase__title">運用・改善</h3>
+            <p class="hp-process-phase__desc">公開後も継続的にサポートします。</p>
+            <span class="hp-process-phase__outcome">→ 更新・改善を重ね、成果を育てる</span>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section cta-band cta-band--strong section--fade-top" aria-labelledby="cta-hp">
-      <div class="container cta-band__inner animate-on-scroll givery-fade-up">
-        <h2 class="cta-band__title" id="cta-hp">まずは現状をお聞かせください。</h2>
-        <p class="cta-band__text">ホームページのご相談は、整理の段階から丁寧にご一緒します。</p>
-        <a href="/contact?type=hp" class="btn btn--primary btn--lg animate-on-scroll givery-fade-up animate-delay-150">HP制作について相談する</a>
+    <section class="section cta-band cta-band--finale cta-band--sub section--fade-top" aria-labelledby="cta-hp">
+      <div class="cta-band__backdrop" aria-hidden="true">
+        <div class="cta-band__glow cta-band__glow--warm"></div>
+        <div class="cta-band__glow cta-band__glow--cool"></div>
+        <div class="cta-band__glow cta-band__glow--accent"></div>
+      </div>
+      <div class="container">
+        <div class="cta-band__panel cta-band__panel--vivid animate-on-scroll givery-fade-up">
+          <div class="cta-band__panel-accent" aria-hidden="true"></div>
+          <p class="cta-band__eyebrow">
+            <span class="cta-band__eyebrow-pill">WEB DESIGN</span>
+          </p>
+          <h2 class="cta-band__title" id="cta-hp">
+            <span class="cta-band__title-line">まずは現状を</span>
+            <span class="cta-band__title-accent text-balance">お聞かせ<em class="text-gradient">ください</em>。</span>
+          </h2>
+          <p class="cta-band__text">ホームページのご相談は、整理の段階から丁寧にご一緒します。<strong>見た目だけで終わらない設計をお約束します。</strong></p>
+          <ul class="cta-band__tags" aria-label="相談の特徴">
+            <li class="cta-band__tag">無料相談</li>
+            <li class="cta-band__tag">対面・オンライン</li>
+            <li class="cta-band__tag">導線設計込み</li>
+          </ul>
+          <div class="cta-band__actions">
+            <div class="cta-band__btn-ring">
+              <a href="/contact?type=hp" class="btn btn--primary btn--lg btn--cta-finale">
+                <span>HP制作について相談する</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+          <p class="cta-band__note">しつこい営業はしません。まずはお話を聞かせてください。</p>
+        </div>
       </div>
     </section>
 

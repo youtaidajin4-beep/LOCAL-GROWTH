@@ -106,6 +106,12 @@
   }
 
   function revealHero() {
+    const phasedHero = document.querySelector('[data-hero-phased]');
+    if (phasedHero) {
+      const phase1 = phasedHero.querySelector('[data-phase="1"]');
+      if (phase1) revealPhaseItems(phase1);
+      return;
+    }
     const heroItems = document.querySelectorAll('[data-hero-animate]');
     heroItems.forEach(function (el, i) {
       setTimeout(function () {
@@ -114,9 +120,45 @@
     });
   }
 
+  let revealGeneration = 0;
+
+  function revealPhaseItems(phaseEl) {
+    if (!phaseEl) return;
+    const generation = ++revealGeneration;
+    const items = Array.prototype.slice.call(phaseEl.querySelectorAll('[data-phase-item]'));
+    items.sort(function (a, b) {
+      return parseInt(a.getAttribute('data-delay') || '0', 10) - parseInt(b.getAttribute('data-delay') || '0', 10);
+    });
+    items.forEach(function (item) {
+      const delay = parseInt(item.getAttribute('data-delay') || '0', 10);
+      item.style.setProperty('--item-delay', '0ms');
+      setTimeout(function () {
+        if (generation !== revealGeneration) return;
+        item.classList.add('is-revealed');
+        if (item.classList.contains('hero-line')) {
+          item.classList.add('is-visible');
+        }
+      }, delay);
+    });
+  }
+
+  function resetPhaseItems(phaseEl) {
+    if (!phaseEl) return;
+    revealGeneration++;
+    phaseEl.querySelectorAll('[data-phase-item]').forEach(function (item) {
+      item.classList.remove('is-revealed', 'is-visible');
+    });
+  }
+
   if (prefersReducedMotion) {
     animateElements.forEach(revealElement);
     document.querySelectorAll('[data-hero-animate]').forEach(revealElement);
+    document.querySelectorAll('[data-phase-item]').forEach(function (item) {
+      item.classList.add('is-revealed');
+      if (item.classList.contains('hero-line')) {
+        item.classList.add('is-visible');
+      }
+    });
   } else {
     const scrollObserver = new IntersectionObserver(
       function (entries) {
@@ -136,10 +178,108 @@
       }
     });
 
-    if (document.querySelectorAll('[data-hero-animate]').length > 0) {
+    if (document.querySelector('[data-hero-phased]') || document.querySelector('[data-hero-animate]')) {
       requestAnimationFrame(revealHero);
     }
   }
+
+  /* --- フェーズヒーロー（3秒自動ローテーション） --- */
+  function initPhasedHero() {
+    const hero = document.querySelector('[data-hero-phased][data-hero-cycle]');
+    if (!hero) return;
+
+    const phase1 = hero.querySelector('[data-phase="1"]');
+    const phase2 = hero.querySelector('[data-phase="2"]');
+    const dots = hero.querySelectorAll('[data-phase-dot]');
+    const interval = parseInt(hero.getAttribute('data-cycle-interval') || '6000', 10);
+    let currentPhase = 1;
+    let cycleTimer = null;
+    let exitTimer = null;
+
+    function updateDots(activePhase) {
+      dots.forEach(function (dot) {
+        const n = parseInt(dot.getAttribute('data-phase-dot'), 10);
+        dot.classList.toggle('hero__phase-dot--active', n === activePhase);
+      });
+    }
+
+    if (prefersReducedMotion) {
+      hero.classList.add('hero--phased-static');
+      if (phase1) phase1.classList.add('hero__phase--active');
+      if (phase2) phase2.classList.add('hero__phase--active');
+      return;
+    }
+
+    function goToPhase(n) {
+      if (!phase1 || !phase2 || n === currentPhase) return;
+
+      if (n === 2) {
+        phase1.classList.remove('hero__phase--active');
+        phase1.classList.add('hero__phase--exiting');
+
+        if (exitTimer) clearTimeout(exitTimer);
+        exitTimer = setTimeout(function () {
+          phase1.classList.remove('hero__phase--exiting');
+        }, 700);
+
+        phase2.classList.add('hero__phase--active', 'hero__phase--entering');
+        setTimeout(function () {
+          phase2.classList.remove('hero__phase--entering');
+        }, 800);
+
+        hero.classList.add('is-phase-2');
+        resetPhaseItems(phase2);
+        revealPhaseItems(phase2);
+      } else {
+        phase2.classList.remove('hero__phase--active', 'hero__phase--entering');
+        hero.classList.remove('is-phase-2');
+        resetPhaseItems(phase2);
+
+        phase1.classList.remove('hero__phase--exiting');
+        phase1.classList.add('hero__phase--active');
+        resetPhaseItems(phase1);
+        revealPhaseItems(phase1);
+      }
+
+      currentPhase = n;
+      updateDots(n);
+    }
+
+    function tick() {
+      goToPhase(currentPhase === 1 ? 2 : 1);
+    }
+
+    function startCycle() {
+      stopCycle();
+      cycleTimer = setInterval(tick, interval);
+    }
+
+    function stopCycle() {
+      if (cycleTimer) {
+        clearInterval(cycleTimer);
+        cycleTimer = null;
+      }
+    }
+
+    const cycleObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            startCycle();
+          } else {
+            stopCycle();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    cycleObserver.observe(hero);
+    updateDots(1);
+    startCycle();
+  }
+
+  initPhasedHero();
 
   /* --- イラストフロート（入場完了後に開始） --- */
   const floatElements = document.querySelectorAll('.illust-float');
@@ -254,53 +394,6 @@
     });
   }
 
-  /* --- デモ iframe --- */
-  document.querySelectorAll('[data-demo-iframe]').forEach(function (iframe) {
-    const fallback = iframe.getAttribute('data-demo-fallback');
-    const browser = iframe.closest('[data-demo-browser]');
-    let loaded = false;
-
-    function showDemoError() {
-      if (!browser || browser.querySelector('.demo-browser__error')) return;
-      const err = document.createElement('div');
-      err.className = 'demo-browser__error is-visible';
-      err.setAttribute('role', 'alert');
-      const text = document.createElement('p');
-      text.className = 'demo-browser__error-text';
-      text.textContent = 'デモの読み込みに失敗しました。下のボタンからフル画面でお試しください。';
-      err.appendChild(text);
-      if (fallback) {
-        const link = document.createElement('a');
-        link.href = fallback;
-        link.className = 'btn btn--primary btn--full';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = 'フル画面でデモを開く';
-        err.appendChild(link);
-      }
-      iframe.hidden = true;
-      iframe.parentNode.appendChild(err);
-    }
-
-    iframe.addEventListener('load', function () {
-      loaded = true;
-      try {
-        const doc = iframe.contentDocument;
-        if (doc && doc.body && doc.body.innerText.indexOf('404') === 0) {
-          showDemoError();
-        }
-      } catch (e) {
-        /* same-origin only */
-      }
-    });
-
-    iframe.addEventListener('error', showDemoError);
-
-    window.setTimeout(function () {
-      if (!loaded) showDemoError();
-    }, 12000);
-  });
-
   /* --- お問い合わせ: URLパラメータで種別プリセット --- */
   const contactContext = document.getElementById('contact-context');
   const params = new URLSearchParams(window.location.search);
@@ -328,6 +421,16 @@
   let currentStep = 1;
   const totalSteps = 3;
   const submitLabel = '無料でお問い合わせする';
+
+  function setSubmitButtonLabel(text) {
+    if (!submitBtn) return;
+    const labelSpan = submitBtn.querySelector('span:first-child');
+    if (labelSpan) {
+      labelSpan.textContent = text;
+    } else {
+      submitBtn.textContent = text;
+    }
+  }
 
   function getTomorrowISO() {
     const d = new Date();
@@ -385,6 +488,12 @@
     if (prevBtn) prevBtn.hidden = currentStep === 1;
     if (nextBtn) nextBtn.hidden = currentStep === totalSteps;
     if (submitBtn) submitBtn.hidden = currentStep !== totalSteps;
+
+    const stepsEl = form ? form.querySelector('.booking-steps') : null;
+    if (stepsEl) {
+      const progress = (currentStep / totalSteps) * 100;
+      stepsEl.style.setProperty('--booking-progress', progress + '%');
+    }
   }
 
   if (nextBtn) {
@@ -479,7 +588,7 @@
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = '送信中...';
+        setSubmitButtonLabel('送信中...');
       }
 
       fetch(endpoint, {
@@ -508,11 +617,43 @@
           }
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = submitLabel;
+            setSubmitButtonLabel(submitLabel);
           }
           updateStepUI();
         });
     });
+  }
+
+  /* --- サブページ: セクションナビ scroll spy --- */
+  const sectionNav = document.querySelector('[data-section-nav]');
+  if (sectionNav) {
+    const navLinks = sectionNav.querySelectorAll('[data-section-link]');
+    const sectionIds = Array.from(navLinks).map(function (link) {
+      return link.getAttribute('data-section-link');
+    });
+    const sections = sectionIds.map(function (id) {
+      return document.getElementById(id);
+    }).filter(Boolean);
+
+    function updateSectionNav() {
+      let activeId = sectionIds[0];
+      const offset = (header ? header.offsetHeight : 0) + 80;
+
+      sections.forEach(function (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= offset && rect.bottom > offset) {
+          activeId = section.id;
+        }
+      });
+
+      navLinks.forEach(function (link) {
+        const isActive = link.getAttribute('data-section-link') === activeId;
+        link.classList.toggle('is-active', isActive);
+      });
+    }
+
+    window.addEventListener('scroll', updateSectionNav, { passive: true });
+    updateSectionNav();
   }
 
 })();
